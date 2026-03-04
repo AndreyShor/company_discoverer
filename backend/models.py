@@ -9,6 +9,22 @@ class CompanyReportRequest(BaseModel):
     company_region: str
 
 
+class CompanyStatusUpdateRequest(BaseModel):
+    status: str  # 'default', 'active', 'red'
+
+
+class RecruitmentNotes(BaseModel):
+    position: str = Field(default="", description="The job position title")
+    job_post_link: Optional[str] = Field(default=None, description="Link to the job posting")
+    job_description: Optional[str] = Field(default=None, description="Brief job description or key requirements")
+    stages_passed: List[str] = Field(default_factory=list, description="Stages already passed")
+    overall_stages: List[str] = Field(default_factory=list, description="All known stages in the process")
+
+
+class NotesUpdateRequest(BaseModel):
+    notes: RecruitmentNotes
+
+
 # ─── Shared building block ───────────────────────────────────────────────────
 
 class Executive(BaseModel):

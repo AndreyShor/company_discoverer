@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
-import { Search, Clock, ChevronRight, Building2, Loader2, Trash2 } from 'lucide-react';
+import { Search, Clock, ChevronRight, Building2, Loader2, Trash2, Circle } from 'lucide-react';
 import './Sidebar.css';
 
 const API = 'http://localhost:8000';
@@ -33,6 +33,23 @@ const Sidebar = ({ activeReportId, onSelectReport, onNewSearch }) => {
       setLoading(false);
     }
   };
+
+  const handleStatusCycle = useCallback(async (e, id, currentStatus) => {
+    e.stopPropagation();
+    const states = ['default', 'active', 'red'];
+    const nextStatus = states[(states.indexOf(currentStatus || 'default') + 1) % states.length];
+    
+    // Optimistic update
+    setReports(prev => prev.map(r => r.id === id ? { ...r, status: nextStatus } : r));
+    
+    try {
+      await axios.patch(`${API}/api/reports/${id}/status`, { status: nextStatus });
+    } catch (err) {
+      console.error('Failed to update status:', err);
+      // Rollback
+      setReports(prev => prev.map(r => r.id === id ? { ...r, status: currentStatus } : r));
+    }
+  }, []);
 
   const handleDelete = useCallback(async (e, id) => {
     e.stopPropagation(); // don't trigger item selection
@@ -99,16 +116,30 @@ const Sidebar = ({ activeReportId, onSelectReport, onNewSearch }) => {
           filtered.map(r => (
             <button
               key={r.id}
-              className={`sidebar-item ${activeReportId === r.id ? 'sidebar-item--active' : ''}`}
+              className={`sidebar-item 
+                ${activeReportId === r.id ? 'sidebar-item--selected' : ''} 
+                sidebar-item--status-${r.status || 'default'}`}
               onClick={() => onSelectReport(r.id)}
             >
-              <Building2 size={14} className="sidebar-item-icon" />
+              <button 
+                className={`sidebar-status-btn sidebar-status-btn--${r.status || 'default'}`}
+                onClick={(e) => handleStatusCycle(e, r.id, r.status)}
+                title="Cycle status (Default -> Active -> Red)"
+              >
+                <Circle size={12} fill={
+                  r.status === 'active' ? '#4ade80' : 
+                  r.status === 'red' ? '#f87171' : 
+                  'transparent'
+                } />
+              </button>
+
               <div className="sidebar-item-text">
                 <span className="sidebar-item-name">{r.company_name}</span>
                 <span className="sidebar-item-meta">
                   {r.company_region} · {timeAgo(r.created_at)}
                 </span>
               </div>
+
               <button
                 className={`sidebar-delete-btn ${deleting === r.id ? 'sidebar-delete-btn--loading' : ''}`}
                 onClick={e => handleDelete(e, r.id)}

@@ -1,11 +1,12 @@
 import os
+from datetime import datetime, timezone
 from dotenv import load_dotenv
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from core.config import SettingsAPI
-from models import CompanyReportRequest, StructuredBusinessAnalysis
+from models import CompanyReportRequest, StructuredBusinessAnalysis, CompanyStatusUpdateRequest, NotesUpdateRequest
 from agents import CompanyIntelligenceAgent, OpenAIConnector
 from DB.ReportStore import ReportStore
 
@@ -45,7 +46,7 @@ async def root():
 
 # ─── Generate & persist ──────────────────────────────────────────────────────
 
-@app.post("/api/generate-report", response_model=StructuredBusinessAnalysis)
+@app.post("/api/generate-report")
 async def generate_report(request: CompanyReportRequest):
     """
     Run the LangGraph pipeline, persist the result to Qdrant, and return it.
@@ -68,8 +69,23 @@ async def generate_report(request: CompanyReportRequest):
             print(f"[SAVED] report_id={report_id}")
         except Exception as store_err:
             print(f"[WARN] Failed to save report to Qdrant: {store_err}")
+            report_id = "temp-" + str(os.urandom(4).hex())
 
-        return report.model_dump()
+        return {
+            "id": report_id,
+            "company_name": request.company_name,
+            "company_region": request.company_region,
+            "created_at": datetime.now(timezone.utc).isoformat(),
+            "status": "default",
+            "notes": {
+                "position": "",
+                "job_post_link": None,
+                "job_description": None,
+                "stages_passed": [],
+                "overall_stages": []
+            },
+            "report": report.model_dump()
+        }
 
     except ValueError as ve:
         raise HTTPException(status_code=400, detail=str(ve))
@@ -119,6 +135,38 @@ async def delete_report(report_id: str):
         deleted = report_store.delete(report_id)
         if not deleted:
             raise HTTPException(status_code=404, detail="Report not found.")
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+@app.patch("/api/reports/{report_id}/status")
+async def update_report_status(report_id: str, request: CompanyStatusUpdateRequest):
+    """
+    Update the status (marking) of a previously saved report.
+    Returns 200 OK on success, 404 if not found.
+    """
+    try:
+        updated = report_store.update_status(report_id, request.status)
+        if not updated:
+            raise HTTPException(status_code=404, detail="Report not found.")
+        return {"id": report_id, "status": request.status}
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.patch("/api/reports/{report_id}/notes")
+async def update_report_notes(report_id: str, request: NotesUpdateRequest):
+    """
+    Update the recruitment notes for a previously saved report.
+    Returns 200 OK on success, 404 if not found.
+    """
+    try:
+        updated = report_store.update_notes(report_id, request.notes.model_dump())
+        if not updated:
+            raise HTTPException(status_code=404, detail="Report not found.")
+        return {"id": report_id, "notes": request.notes}
     except HTTPException:
         raise
     except Exception as e:

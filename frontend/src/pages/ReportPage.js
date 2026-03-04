@@ -15,7 +15,13 @@ import {
   MapPin,
   Layers,
   BarChart2,
+  ClipboardList,
+  Plus,
+  X,
+  Link,
+  CheckCircle2,
 } from 'lucide-react';
+import axios from 'axios';
 import './ReportPage.css';
 
 /* ─────────────────────────────── Tab definitions ────────────────────────── */
@@ -25,6 +31,7 @@ const TABS = [
   { id: 'market',     label: 'Market',      icon: Globe       },
   { id: 'products',   label: 'Products',    icon: Package     },
   { id: 'news',       label: 'News & Sources', icon: Newspaper },
+  { id: 'notes',      label: 'Notes',       icon: ClipboardList },
 ];
 
 /* ─────────────────────────────── Small helpers ──────────────────────────── */
@@ -342,24 +349,119 @@ const NewsPanel = ({ data }) => (
   </div>
 );
 
+const NotesPanel = ({ notes }) => (
+  <div className="rp-panel">
+    <Section icon={ClipboardList} title="Recruitment Status" color="blue">
+      <KV label="Target Position" value={notes.position} />
+      {notes.job_post_link && (
+        <div className="rp-kv">
+          <span className="rp-kv-label">Job Post</span>
+          <a href={notes.job_post_link} target="_blank" rel="noopener noreferrer" className="rp-link">
+            <Link size={12} style={{marginRight: '4px'}} />
+            View Posting
+          </a>
+        </div>
+      )}
+    </Section>
+
+    <Section icon={Layers} title="Interview Stages" color="teal">
+      <div className="rp-stages-container">
+        {notes.overall_stages && notes.overall_stages.length > 0 ? (
+          notes.overall_stages.map((stage, i) => {
+            const isPassed = notes.stages_passed?.includes(stage);
+            return (
+              <div key={i} className={`rp-stage-item ${isPassed ? 'rp-stage-item--passed' : ''}`}>
+                <CheckCircle2 size={16} className="rp-stage-icon" />
+                <span>{stage}</span>
+              </div>
+            );
+          })
+        ) : <p className="rp-muted">No stages defined yet. Use "Note in" to add them.</p>}
+      </div>
+    </Section>
+
+    <Section icon={Newspaper} title="Job Description / Notes" color="purple">
+      <p className="rp-overview-text">
+        {notes.job_description || 'No additional notes provided.'}
+      </p>
+    </Section>
+  </div>
+);
+
 /* ─────────────────────────────── Main component ─────────────────────────── */
-const ReportPage = ({ reportData }) => {
+const ReportPage = ({ reportData: initialData }) => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
+  const [reportData, setReportData] = useState(initialData);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
+
+  // Form state for notes
+  const [formData, setFormData] = useState({
+    position: '',
+    job_post_link: '',
+    job_description: '',
+    stages_passed: '',
+    overall_stages: '',
+  });
 
   useEffect(() => {
-    if (!reportData) navigate('/');
-  }, [reportData, navigate]);
+    if (!initialData) {
+      navigate('/');
+    } else {
+      setReportData(initialData);
+      const notes = initialData.notes || {};
+      setFormData({
+        position: notes.position || '',
+        job_post_link: notes.job_post_link || '',
+        job_description: notes.job_description || '',
+        stages_passed: (notes.stages_passed || []).join(', '),
+        overall_stages: (notes.overall_stages || []).join(', '),
+      });
+    }
+  }, [initialData, navigate]);
 
   if (!reportData) return null;
 
+  const actualReport = reportData.report || reportData;
+  const notes = reportData.notes || {};
+  const reportId = reportData.id;
+
+  const handleSaveNotes = async (e) => {
+    e.preventDefault();
+    if (!reportId) return;
+
+    setIsSaving(true);
+    try {
+      const updatedNotes = {
+        position: formData.position,
+        job_post_link: formData.job_post_link || null,
+        job_description: formData.job_description || null,
+        stages_passed: formData.stages_passed.split(',').map(s => s.trim()).filter(Boolean),
+        overall_stages: formData.overall_stages.split(',').map(s => s.trim()).filter(Boolean),
+      };
+
+      const API = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+      await axios.patch(`${API}/api/reports/${reportId}/notes`, { notes: updatedNotes });
+
+      setReportData(prev => ({ ...prev, notes: updatedNotes }));
+      setIsModalOpen(false);
+    } catch (err) {
+      console.error('Failed to update notes:', err);
+      alert('Failed to save notes. Please try again.');
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
   const renderPanel = () => {
     switch (activeTab) {
-      case 'overview':  return <OverviewPanel  data={reportData} />;
-      case 'financial': return <FinancialPanel fin={reportData.financial_analysis} deep={reportData.financial_deep_analysis} />;
-      case 'market':    return <MarketPanel    market={reportData.market_positioning} />;
-      case 'products':  return <ProductsPanel  product={reportData.product_analysis} />;
-      case 'news':      return <NewsPanel      data={reportData} />;
+      case 'overview':  return <OverviewPanel  data={actualReport} />;
+      case 'financial': return <FinancialPanel fin={actualReport.financial_analysis} deep={actualReport.financial_deep_analysis} />;
+      case 'market':    return <MarketPanel    market={actualReport.market_positioning} />;
+      case 'products':  return <ProductsPanel  product={actualReport.product_analysis} />;
+      case 'news':      return <NewsPanel      data={actualReport} />;
+      case 'notes':     return <NotesPanel     notes={notes} />;
       default:          return null;
     }
   };
@@ -367,14 +469,21 @@ const ReportPage = ({ reportData }) => {
   return (
     <div className="report-page">
       {/* Back button */}
-      <button className="back-btn" onClick={() => navigate('/')}>
-        <ArrowLeft size={16} /> Back to Search
-      </button>
+      <div className="rp-top-nav">
+        <button className="back-btn" onClick={() => navigate('/')}>
+          <ArrowLeft size={16} /> Back to Search
+        </button>
+        {reportId && (
+          <button className="note-in-btn" onClick={() => setIsModalOpen(true)}>
+            <Plus size={16} /> Note in
+          </button>
+        )}
+      </div>
 
       {/* Header */}
       <div className="report-header">
         <div className="report-header-text">
-          <h2>{reportData.company_name}</h2>
+          <h2>{actualReport.company_name}</h2>
           <span className="badge">Intelligence Report</span>
         </div>
       </div>
@@ -397,6 +506,76 @@ const ReportPage = ({ reportData }) => {
       <div className="rp-tab-content">
         {renderPanel()}
       </div>
+
+      {/* Notes Modal */}
+      {isModalOpen && (
+        <div className="rp-modal-overlay">
+          <div className="rp-modal">
+            <div className="rp-modal-header">
+              <h3>Track Recruitment Process</h3>
+              <button className="close-btn" onClick={() => setIsModalOpen(false)}>
+                <X size={20} />
+              </button>
+            </div>
+            <form onSubmit={handleSaveNotes} className="rp-modal-form">
+              <div className="form-group">
+                <label>Position</label>
+                <input
+                  type="text"
+                  placeholder="e.g. Senior Software Engineer"
+                  value={formData.position}
+                  onChange={e => setFormData({...formData, position: e.target.value})}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>Job Post Link</label>
+                <input
+                  type="url"
+                  placeholder="https://linkedin.com/jobs/..."
+                  value={formData.job_post_link}
+                  onChange={e => setFormData({...formData, job_post_link: e.target.value})}
+                />
+              </div>
+              <div className="form-group">
+                <label>Job Description / Notes</label>
+                <textarea
+                  placeholder="Key requirements, salary, or personal notes..."
+                  value={formData.job_description}
+                  onChange={e => setFormData({...formData, job_description: e.target.value})}
+                  rows={4}
+                />
+              </div>
+              <div className="form-group">
+                <label>Overall Stages (comma separated)</label>
+                <input
+                  type="text"
+                  placeholder="HR Call, Technical, Founder, Offer"
+                  value={formData.overall_stages}
+                  onChange={e => setFormData({...formData, overall_stages: e.target.value})}
+                />
+              </div>
+              <div className="form-group">
+                <label>Stages Passed (comma separated)</label>
+                <input
+                  type="text"
+                  placeholder="HR Call, Technical"
+                  value={formData.stages_passed}
+                  onChange={e => setFormData({...formData, stages_passed: e.target.value})}
+                />
+              </div>
+              <div className="rp-modal-actions">
+                <button type="button" className="cancel-btn" onClick={() => setIsModalOpen(false)}>
+                  Cancel
+                </button>
+                <button type="submit" className="save-btn" disabled={isSaving}>
+                  {isSaving ? 'Saving...' : 'Save Notes'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

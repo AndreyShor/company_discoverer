@@ -117,9 +117,27 @@
     background: rgba(255, 255, 255, 0.05);
 }
 
-.sidebar-item--active {
+.sidebar-item--selected {
     background: rgba(96, 165, 250, 0.12);
     border: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+.sidebar-item--status-active {
+    background: rgba(74, 222, 128, 0.04);
+}
+
+.sidebar-item--status-red {
+    background: rgba(248, 113, 113, 0.04);
+}
+
+.sidebar-item--selected.sidebar-item--status-active {
+    background: rgba(74, 222, 128, 0.12);
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+.sidebar-item--selected.sidebar-item--status-red {
+    background: rgba(248, 113, 113, 0.12);
+    border-color: rgba(248, 113, 113, 0.3);
 }
 
 .sidebar-item-icon {
@@ -157,8 +175,42 @@
     flex-shrink: 0;
 }
 
-.sidebar-item--active .sidebar-item-chevron {
+.sidebar-item--selected .sidebar-item-chevron {
     color: #60a5fa;
+}
+
+/* ── Status button ──────────────────────────── */
+.sidebar-status-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.sidebar-status-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-status-btn--active {
+    background: rgba(74, 222, 128, 0.15);
+    border-color: rgba(74, 222, 128, 0.3);
+    color: #4ade80;
+}
+
+.sidebar-status-btn--red {
+    background: rgba(248, 113, 113, 0.15);
+    border-color: rgba(248, 113, 113, 0.3);
+    color: #f87171;
 }
 
 /* ── Delete button ──────────────────────────── */

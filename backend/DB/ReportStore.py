@@ -8,6 +8,8 @@ Schema (collection: company_reports):
     company_name  : str
     company_region: str
     created_at    : ISO-8601 timestamp str
+    status        : str ('default', 'active', 'red')
+    notes         : dict (RecruitmentNotes)
     report        : full StructuredBusinessAnalysis as dict
 """
 
@@ -74,6 +76,14 @@ class ReportStore:
             "company_name": company_name,
             "company_region": company_region,
             "created_at": datetime.now(timezone.utc).isoformat(),
+            "status": "default",
+            "notes": {
+                "position": "",
+                "job_post_link": None,
+                "job_description": None,
+                "stages_passed": [],
+                "overall_stages": []
+            },
             "report": report,  # full dict — nested sub-models included
         }
 
@@ -106,6 +116,7 @@ class ReportStore:
                 "company_name":   p.get("company_name", ""),
                 "company_region": p.get("company_region", ""),
                 "created_at":     p.get("created_at", ""),
+                "status":         p.get("status", "default"),
             })
 
         # Sort newest first
@@ -146,5 +157,59 @@ class ReportStore:
         if not results:
             return None
 
+        return results[0].payload
+
+    def update_status(self, report_id: str, status: str) -> bool:
+        """
+        Update the status of a report in Qdrant.
+        Returns True if successful, False if not found.
+        """
+        results = self._client.retrieve(
+            collection_name=COLLECTION,
+            ids=[report_id],
+            with_payload=True,
+            with_vectors=False,
+        )
+        if not results:
+            return False
+
         payload = results[0].payload or {}
-        return payload.get("report")
+        payload["status"] = status
+
+        point = PointStruct(
+            id=report_id,
+            vector=results[0].vector or [], # We don't have vectors here if with_vectors=False
+            payload=payload,
+        )
+        
+        # Actually, retrieve doesn't return vectors by default. 
+        # But upsert replaces the point. If we don't provide a vector, it might clear it.
+        # Better use set_payload for partial updates.
+        
+        self._client.set_payload(
+            collection_name=COLLECTION,
+            payload={"status": status},
+            points=[report_id],
+        )
+        return True
+
+    def update_notes(self, report_id: str, notes: Dict[str, Any]) -> bool:
+        """
+        Update the recruitment notes of a report in Qdrant.
+        Returns True if successful, False if not found.
+        """
+        results = self._client.retrieve(
+            collection_name=COLLECTION,
+            ids=[report_id],
+            with_payload=False,
+            with_vectors=False,
+        )
+        if not results:
+            return False
+
+        self._client.set_payload(
+            collection_name=COLLECTION,
+            payload={"notes": notes},
+            points=[report_id],
+        )
+        return True
