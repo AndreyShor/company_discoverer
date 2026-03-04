@@ -1,78 +1,125 @@
-from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
-from core.config import SettingsAPI
-import asyncio
-
-# Our models and application logic
-from models import CompanyReportRequest, StructuredBusinessAnalysis
-from LLM import LLM
-from search_agent import SearchAgent
-from scraper import WebScraper
-
 import os
 from dotenv import load_dotenv
 
-# Load variables from .env
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+
+from core.config import SettingsAPI
+from models import CompanyReportRequest, StructuredBusinessAnalysis
+from agents import CompanyIntelligenceAgent, OpenAIConnector
+from DB.ReportStore import ReportStore
+
+# Load .env
 load_dotenv()
 
-# LLM Settings
-local_api_base = os.getenv("LLM_API_BASE", None) # Defaults to None, meaning official OpenAI
-local_api_key = os.getenv("OPENAI_KEY", "your-openai-key")
-model_name = os.getenv("LLM_MODEL_NAME", "gpt-4o") # Use gpt-4o-mini for fast, inexpensive structured output
+# ─── LLM connectors ─────────────────────────────────────────────────────────
+_model_name = os.getenv("LLM_MODEL_NAME", "gpt-4o-mini")
+_fast_model  = os.getenv("LLM_FAST_MODEL", "gpt-4o-mini")
 
-app = FastAPI()
+llm_connector      = OpenAIConnector(model=_model_name, temperature=0.0, max_tokens=4000)
+fast_llm_connector = OpenAIConnector(model=_fast_model,  temperature=0.0, max_tokens=512)
 
+# ─── Agent (compiled once at startup) ───────────────────────────────────────
+agent = CompanyIntelligenceAgent(
+    llm_connector=llm_connector,
+    fast_llm_connector=fast_llm_connector,
+)
 
-# Initialize Settings, CORS
+# ─── Report store (Qdrant-backed) ────────────────────────────────────────────
+report_store = ReportStore(host="qdrant", port=6333)
+
+# ─── FastAPI application ─────────────────────────────────────────────────────
+app = FastAPI(title="Company Intelligence API")
 SettingsAPI(app, corsFlag=True)
+
 
 @app.on_event("startup")
 async def startup_event():
-    print("Application started.")
+    print(f"Company Intelligence Agent started (model={_model_name}).")
+
 
 @app.get("/start")
 async def root():
-    return {"message": "Hello World. Agent Backend Running."}
+    return {"message": "Company Intelligence Agent backend is running."}
+
+
+# ─── Generate & persist ──────────────────────────────────────────────────────
 
 @app.post("/api/generate-report", response_model=StructuredBusinessAnalysis)
 async def generate_report(request: CompanyReportRequest):
+    """
+    Run the LangGraph pipeline, persist the result to Qdrant, and return it.
+    """
+    print(f"[REQUEST] company='{request.company_name}'  region='{request.company_region}'")
     try:
-        print(f"Received request to analyze '{request.company_name}' in '{request.company_region}'")
-
-        # 1. Search for info using DDGS
-        search_agent = SearchAgent()
-        print("Searching DuckDuckGo...")
-        initial_results = search_agent.search_company_info(
-            company_name=request.company_name, 
-            country=request.company_region,
-            max_results=4
-        )
-        
-        # 2. Scrape underlying URLs to get more text
-        scraper = WebScraper(timeout=15)
-        print(f"Scraping URLs ({len(initial_results)} links found)...")
-        enriched_results = await scraper.scrape_urls(initial_results)
-        
-        # 3. Process into RAG using the LLM logic
-        print("Passing retrieved and scraped content to Local LLM...")
-        llm = LLM(
-            model_name=model_name,
-            local_api_key=local_api_key,
-            local_api_base=local_api_base
-        )
-        
-        structured_report = llm.generate_company_report(
+        report = await agent.generate_report(
             company_name=request.company_name,
-            region=request.company_region,
-            retrieved_data=enriched_results
+            company_region=request.company_region,
         )
-        
-        return structured_report
+
+        # Persist to Qdrant (fire-and-forget — don't let storage failures block the response)
+        try:
+            report_dict = report.model_dump()
+            report_id = report_store.save(
+                company_name=request.company_name,
+                company_region=request.company_region,
+                report=report_dict,
+            )
+            print(f"[SAVED] report_id={report_id}")
+        except Exception as store_err:
+            print(f"[WARN] Failed to save report to Qdrant: {store_err}")
+
+        return report.model_dump()
+
+    except ValueError as ve:
+        raise HTTPException(status_code=400, detail=str(ve))
 
     except Exception as e:
-        import traceback
-        traceback.print_exc()
-        error_msg = str(e)
-        if "No models loaded" in error_msg:
-            raise HTTPException(status_code=500, detail="No models loaded in LM Studio. Please load a model (e.g., in the developer page or via 'lms load') and try again.")
-        raise HTTPException(status_code=500, detail=error_msg)
+        import traceback; traceback.print_exc()
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# ─── History endpoints ────────────────────────────────────────────────────────
+
+@app.get("/api/reports")
+async def list_reports():
+    """
+    Return a list of all previously generated report summaries (for the sidebar).
+    Each item: { id, company_name, company_region, created_at }
+    """
+    try:
+        return report_store.list_all(limit=100)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/reports/{report_id}")
+async def get_report(report_id: str):
+    """
+    Fetch the full report payload for a previously saved report by its UUID.
+    """
+    try:
+        report = report_store.get_by_id(report_id)
+        if report is None:
+            raise HTTPException(status_code=404, detail="Report not found.")
+        return report
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.delete("/api/reports/{report_id}", status_code=204)
+async def delete_report(report_id: str):
+    """
+    Delete a previously saved report from Qdrant by its UUID.
+    Returns 204 No Content on success, 404 if not found.
+    """
+    try:
+        deleted = report_store.delete(report_id)
+        if not deleted:
+            raise HTTPException(status_code=404, detail="Report not found.")
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

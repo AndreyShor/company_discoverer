@@ -9,6 +9,7 @@ langchain_core
 langchain-qdrant
 langchain-community
 langchain_huggingface
+langgraph
 ddgs
 beautifulsoup4
 httpx
