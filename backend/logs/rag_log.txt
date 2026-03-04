@@ -1,0 +1,593 @@
+///////// Record 1 ////////////
+Timestamp: 2025-04-30 00:53:03
+
+//////// Query:
+
+What city do I currently live in, and what is my full address?
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: {"_id": "john", "background_and_behavioral_risks": {"criminal_record": {"has_criminal_record": false, "details": []}, "alcohol_consumption": {"consumes_alcohol": true, "frequency": "Occasionally (1-2 times a month)", "preferred_drinks": ["Craft beer", "Red wine"], "context": "Usually social events or celebrations", "history_of_abuse":
+false}, "substance_use": {"tobacco": {"uses": false, "history_of_use": false}, "cannabis": {"uses": "Occasionally", "frequency": "A few times per year", "context": "Social settings or creative mood", "history_of_abuse": false}, "prescription_medications": {"currently_on": false, "history": []}, "illicit_substances": {"uses": false, "history_of_use": false}}, "behavioral_risk_factors": {"impulsivity": "Low", "risk_taking": "Low to Moderate (only in intellectual domains)", "law_compliance":
+"High", "peer_pressure_susceptibility": "Low", "self-regulation": "Moderate to high"}}, "personal_info": {"first_name": "John", "last_name": "Doe", "age": 29, "gender": "Male", "date_of_birth": "1995-08-12", "email": "john.doe@example.com", "phone": "+44 7911 123456", "address": {"street": "123 Main Street", "city": "London", "postal_code": "SW1A 1AA", "country": "United Kingdom"}, "nationality": "British", "marital_status": "Single", "languages_spoken": ["English", "Spanish"], "education":
+[{"level": "Bachelor's", "field": "Computer Science", "institution": "University of Manchester", "year_completed": 2017}, {"level": "Master's", "field": "Data Science", "institution": "Imperial College London", "year_completed": 2019}], "employment": {"current_job_title": "Data Scientist", "company": "TechSolutions Ltd.", "start_date": "2020-03-15", "employment_type": "Full-time"}, "skills": ["Python", "Machine Learning", "SQL", "Data Visualization", "Cloud Computing", "FastAPI", "Docker",
+"Pandas"], "hobbies": [{"name": "Hiking", "frequency": "Every weekend", "preferred_locations": ["Lake District", "Epping Forest"], "purpose": "Stress relief and nature exploration"}, {"name": "Photography", "frequency": "2-3 times a week", "style": "Urban and landscape", "equipment": ["Sony A6400", "Drone"], "shared_on": ["Instagram"]}, {"name": "Playing Guitar", "frequency": "4 times a week", "style": "Acoustic and blues", "goal": "Personal enjoyment and skill improvement"}, {"name":
+"Traveling", "frequency": "Every 2-3 months", "preferred_style": "Solo backpacking", "recent_destinations": ["Italy", "Spain", "Japan"]}, {"name": "Chess", "frequency": "Almost daily (online)", "platforms": ["Chess.com", "Lichess"], "rank": "Intermediate"}], "favorite_foods": ["Sushi", "Margherita Pizza", "Thai Green Curry", "Ramen", "Chocolate Lava Cake"], "dietary_preferences": {"vegetarian": false, "allergies": ["Peanuts"]}, "personality": {"strong_traits": ["Curious", "Detail-oriented",
+"Analytical", "Empathetic", "Disciplined", "Reliable", "Independent", "Good listener"], "weak_traits": ["Overthinks decisions", "Avoids confrontation", "Struggles with spontaneity", "Can be overly self-critical", "Tends to procrastinate under pressure", "Mild social anxiety in large groups"]}, "daily_routine": {"wake_up_time": "07:00", "bed_time": "22:30", "preferred_work_hours": "09:00 - 17:30", "exercise_frequency": "3 times a week", "screen_time": "6-8 hours/day"}, "health": {"height_cm":
+180, "weight_kg": 76, "blood_type": "O+", "chronic_conditions": [], "mental_health": "Stable", "fitness_level": "Moderate", "last_medical_checkup": "2024-10-10", "vaccination_status": {"covid_19": "Fully vaccinated", "flu": "2024-11-01"}, "sleep_quality": "Good"}, "social_connections": {"number_of_close_friends": 4, "best_friend": {"name": "Michael Stone", "since": "2012", "occupation": "UX Designer", "location": "Manchester"}, "social_circle_size": 25, "online_presence": {"platforms_active":
+["LinkedIn", "GitHub", "Instagram"], "average_daily_interactions": 15}}, "relatives": [{"relation": "Mother", "name": "Elizabeth Doe", "age": 60, "location": "Liverpool", "relationship_quality": "Very good"}, {"relation": "Father", "name": "Richard Doe", "age": 62, "location": "Liverpool", "relationship_quality": "Good"}, {"relation": "Sister", "name": "Emily Doe", "age": 25, "location": "Bristol", "relationship_quality": "Very good"}], "partners_history": [{"name": "Anna Mitchell", "duration":
+"2018-2021", "reason_for_breakup": "Long-distance challenges", "current_relationship": "Friendly"}, {"name": "Claire Bennett", "duration": "2022-2023", "reason_for_breakup": "Different life goals", "current_relationship": "No contact"}], "current_relationship_status": {"status": "Single", "looking_for": "Serious relationship", "last_date": "2025-03-15"}, "motivations_and_values": {"core_values": ["Integrity", "Growth", "Kindness", "Autonomy"], "motivated_by": ["Learning new things", "Meaningful
+work", "Recognition"], "stressed_by": ["Uncertainty", "Last-minute changes", "Crowded environments"], "coping_mechanisms": ["Walking", "Listening to music", "Writing journal entries"]}, "behavioral_tendencies": {"decision_style": "Analytical, slow but thorough", "conflict_reaction": "Avoidant, prefers indirect resolution", "goal_commitment": "High if internally motivated", "change_resistance": "Moderate", "social_energy": "Low-medium (introvert)"}, "goals": ["Become a lead data scientist",
+"Build an open-source AI tool", "Run a half marathon", "Travel to New Zealand"], "favorite_books": ["Sapiens by Yuval Noah Harari", "The Pragmatic Programmer", "Atomic Habits by James Clear", "Thinking, Fast and Slow by Daniel Kahneman"], "travel_history": ["Japan", "Spain", "Canada", "Italy", "Germany"], "social_links": {"linkedin": "https://www.linkedin.com/in/johndoe", "github": "https://github.com/johndoe", "website": "https://johndoe.dev"}}, "psychological_profile": {"mbti_type": "INTP",
+"big_five_traits": {"openness": 0.87, "conscientiousness": 0.68, "extraversion": 0.31, "agreeableness": 0.73, "neuroticism": 0.56}, "emotional_profile": {"baseline_mood": "Calm", "emotional_triggers": ["Criticism", "Being interrupted", "Unexpected changes"], "typical_emotional_responses": {"stress": "Withdraws, seeks quiet time", "anger": "Rare, internalized, passive", "excitement": "Increased focus and talkativeness", "joy": "Visible through small physical gestures"},
+"emotion_regulation_strategies": ["Walking", "Meditation", "Writing", "Talking to a friend"]}, "beliefs_and_alignment": {"political_alignment": "Moderate left-leaning", "beliefs": {"environment": "Supports green tech and sustainable living", "economy": "Pro-innovation, supports universal basic income", "education": "Advocates for accessible higher education", "technology": "Strongly pro-AI and digital transformation"}, "civic_engagement": {"votes_regularly": true, "participates_in_local_events":
+false, "donates_to_causes": ["Environmental NGOs", "Digital rights orgs"]}}, "media_consumption": {"news_sources": ["BBC", "The Guardian", "Medium Tech & Data"], "entertainment": {"tv_series": ["Black Mirror", "The Expanse", "Mr. Robot"], "movies": ["Inception", "Interstellar", "The Social Network"], "games": ["The Witcher 3", "Civilization VI"]}, "social_media_usage": {"platforms": ["Reddit", "YouTube", "Instagram"], "daily_time_spent_minutes": 90, "main_purpose": ["Learning", "Entertainment",
+"Social updates"]}}, "predictive_behaviors": {"under_pressure": "Withdraws, works solo, avoids delegation", "when_confused": "Seeks online forums, YouTube explainers, or books", "in_conflict": "Avoids direct confrontation, prefers written expression", "when_excited": "Takes on new projects, talks faster, sleeps less", "on_success": "Celebrates quietly, shares online with close circle", "on_failure": "Self-critical, re-analyzes decisions, withdraws temporarily"}}}
+
+//////// System Response:
+
+Your current city is London. Your full address is: 123 Main Street 123 Main Street London SW1A 1AA United Kingdom
+
+//////// Time for RAG generation: 0.02 seconds
+
+//////// Time Taken to Response: 2.05 seconds
+
+//////// Total Time: 2.08 seconds
+
+///////// Record 2 ////////////
+Timestamp: 2025-04-30 00:53:13
+
+//////// Query:
+
+When and where did I complete my master's degree?
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: {"_id": "john", "background_and_behavioral_risks": {"criminal_record": {"has_criminal_record": false, "details": []}, "alcohol_consumption": {"consumes_alcohol": true, "frequency": "Occasionally (1-2 times a month)", "preferred_drinks": ["Craft beer", "Red wine"], "context": "Usually social events or celebrations", "history_of_abuse":
+false}, "substance_use": {"tobacco": {"uses": false, "history_of_use": false}, "cannabis": {"uses": "Occasionally", "frequency": "A few times per year", "context": "Social settings or creative mood", "history_of_abuse": false}, "prescription_medications": {"currently_on": false, "history": []}, "illicit_substances": {"uses": false, "history_of_use": false}}, "behavioral_risk_factors": {"impulsivity": "Low", "risk_taking": "Low to Moderate (only in intellectual domains)", "law_compliance":
+"High", "peer_pressure_susceptibility": "Low", "self-regulation": "Moderate to high"}}, "personal_info": {"first_name": "John", "last_name": "Doe", "age": 29, "gender": "Male", "date_of_birth": "1995-08-12", "email": "john.doe@example.com", "phone": "+44 7911 123456", "address": {"street": "123 Main Street", "city": "London", "postal_code": "SW1A 1AA", "country": "United Kingdom"}, "nationality": "British", "marital_status": "Single", "languages_spoken": ["English", "Spanish"], "education":
+[{"level": "Bachelor's", "field": "Computer Science", "institution": "University of Manchester", "year_completed": 2017}, {"level": "Master's", "field": "Data Science", "institution": "Imperial College London", "year_completed": 2019}], "employment": {"current_job_title": "Data Scientist", "company": "TechSolutions Ltd.", "start_date": "2020-03-15", "employment_type": "Full-time"}, "skills": ["Python", "Machine Learning", "SQL", "Data Visualization", "Cloud Computing", "FastAPI", "Docker",
+"Pandas"], "hobbies": [{"name": "Hiking", "frequency": "Every weekend", "preferred_locations": ["Lake District", "Epping Forest"], "purpose": "Stress relief and nature exploration"}, {"name": "Photography", "frequency": "2-3 times a week", "style": "Urban and landscape", "equipment": ["Sony A6400", "Drone"], "shared_on": ["Instagram"]}, {"name": "Playing Guitar", "frequency": "4 times a week", "style": "Acoustic and blues", "goal": "Personal enjoyment and skill improvement"}, {"name":
+"Traveling", "frequency": "Every 2-3 months", "preferred_style": "Solo backpacking", "recent_destinations": ["Italy", "Spain", "Japan"]}, {"name": "Chess", "frequency": "Almost daily (online)", "platforms": ["Chess.com", "Lichess"], "rank": "Intermediate"}], "favorite_foods": ["Sushi", "Margherita Pizza", "Thai Green Curry", "Ramen", "Chocolate Lava Cake"], "dietary_preferences": {"vegetarian": false, "allergies": ["Peanuts"]}, "personality": {"strong_traits": ["Curious", "Detail-oriented",
+"Analytical", "Empathetic", "Disciplined", "Reliable", "Independent", "Good listener"], "weak_traits": ["Overthinks decisions", "Avoids confrontation", "Struggles with spontaneity", "Can be overly self-critical", "Tends to procrastinate under pressure", "Mild social anxiety in large groups"]}, "daily_routine": {"wake_up_time": "07:00", "bed_time": "22:30", "preferred_work_hours": "09:00 - 17:30", "exercise_frequency": "3 times a week", "screen_time": "6-8 hours/day"}, "health": {"height_cm":
+180, "weight_kg": 76, "blood_type": "O+", "chronic_conditions": [], "mental_health": "Stable", "fitness_level": "Moderate", "last_medical_checkup": "2024-10-10", "vaccination_status": {"covid_19": "Fully vaccinated", "flu": "2024-11-01"}, "sleep_quality": "Good"}, "social_connections": {"number_of_close_friends": 4, "best_friend": {"name": "Michael Stone", "since": "2012", "occupation": "UX Designer", "location": "Manchester"}, "social_circle_size": 25, "online_presence": {"platforms_active":
+["LinkedIn", "GitHub", "Instagram"], "average_daily_interactions": 15}}, "relatives": [{"relation": "Mother", "name": "Elizabeth Doe", "age": 60, "location": "Liverpool", "relationship_quality": "Very good"}, {"relation": "Father", "name": "Richard Doe", "age": 62, "location": "Liverpool", "relationship_quality": "Good"}, {"relation": "Sister", "name": "Emily Doe", "age": 25, "location": "Bristol", "relationship_quality": "Very good"}], "partners_history": [{"name": "Anna Mitchell", "duration":
+"2018-2021", "reason_for_breakup": "Long-distance challenges", "current_relationship": "Friendly"}, {"name": "Claire Bennett", "duration": "2022-2023", "reason_for_breakup": "Different life goals", "current_relationship": "No contact"}], "current_relationship_status": {"status": "Single", "looking_for": "Serious relationship", "last_date": "2025-03-15"}, "motivations_and_values": {"core_values": ["Integrity", "Growth", "Kindness", "Autonomy"], "motivated_by": ["Learning new things", "Meaningful
+work", "Recognition"], "stressed_by": ["Uncertainty", "Last-minute changes", "Crowded environments"], "coping_mechanisms": ["Walking", "Listening to music", "Writing journal entries"]}, "behavioral_tendencies": {"decision_style": "Analytical, slow but thorough", "conflict_reaction": "Avoidant, prefers indirect resolution", "goal_commitment": "High if internally motivated", "change_resistance": "Moderate", "social_energy": "Low-medium (introvert)"}, "goals": ["Become a lead data scientist",
+"Build an open-source AI tool", "Run a half marathon", "Travel to New Zealand"], "favorite_books": ["Sapiens by Yuval Noah Harari", "The Pragmatic Programmer", "Atomic Habits by James Clear", "Thinking, Fast and Slow by Daniel Kahneman"], "travel_history": ["Japan", "Spain", "Canada", "Italy", "Germany"], "social_links": {"linkedin": "https://www.linkedin.com/in/johndoe", "github": "https://github.com/johndoe", "website": "https://johndoe.dev"}}, "psychological_profile": {"mbti_type": "INTP",
+"big_five_traits": {"openness": 0.87, "conscientiousness": 0.68, "extraversion": 0.31, "agreeableness": 0.73, "neuroticism": 0.56}, "emotional_profile": {"baseline_mood": "Calm", "emotional_triggers": ["Criticism", "Being interrupted", "Unexpected changes"], "typical_emotional_responses": {"stress": "Withdraws, seeks quiet time", "anger": "Rare, internalized, passive", "excitement": "Increased focus and talkativeness", "joy": "Visible through small physical gestures"},
+"emotion_regulation_strategies": ["Walking", "Meditation", "Writing", "Talking to a friend"]}, "beliefs_and_alignment": {"political_alignment": "Moderate left-leaning", "beliefs": {"environment": "Supports green tech and sustainable living", "economy": "Pro-innovation, supports universal basic income", "education": "Advocates for accessible higher education", "technology": "Strongly pro-AI and digital transformation"}, "civic_engagement": {"votes_regularly": true, "participates_in_local_events":
+false, "donates_to_causes": ["Environmental NGOs", "Digital rights orgs"]}}, "media_consumption": {"news_sources": ["BBC", "The Guardian", "Medium Tech & Data"], "entertainment": {"tv_series": ["Black Mirror", "The Expanse", "Mr. Robot"], "movies": ["Inception", "Interstellar", "The Social Network"], "games": ["The Witcher 3", "Civilization VI"]}, "social_media_usage": {"platforms": ["Reddit", "YouTube", "Instagram"], "daily_time_spent_minutes": 90, "main_purpose": ["Learning", "Entertainment",
+"Social updates"]}}, "predictive_behaviors": {"under_pressure": "Withdraws, works solo, avoids delegation", "when_confused": "Seeks online forums, YouTube explainers, or books", "in_conflict": "Avoids direct confrontation, prefers written expression", "when_excited": "Takes on new projects, talks faster, sleeps less", "on_success": "Celebrates quietly, shares online with close circle", "on_failure": "Self-critical, re-analyzes decisions, withdraws temporarily"}}}
+
+//////// System Response:
+
+Your Master's degree was completed in 2019. You completed it at Imperial College London, during the academic year 2019-2020.
+
+//////// Time for RAG generation: 0.01 seconds
+
+//////// Time Taken to Response: 0.77 seconds
+
+//////// Total Time: 0.78 seconds
+
+///////// Record 3 ////////////
+Timestamp: 2025-04-30 00:53:25
+
+//////// Query:
+
+How long have I been working at TechSolutions Ltd., and what’s my job title?
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: {"_id": "john", "background_and_behavioral_risks": {"criminal_record": {"has_criminal_record": false, "details": []}, "alcohol_consumption": {"consumes_alcohol": true, "frequency": "Occasionally (1-2 times a month)", "preferred_drinks": ["Craft beer", "Red wine"], "context": "Usually social events or celebrations", "history_of_abuse":
+false}, "substance_use": {"tobacco": {"uses": false, "history_of_use": false}, "cannabis": {"uses": "Occasionally", "frequency": "A few times per year", "context": "Social settings or creative mood", "history_of_abuse": false}, "prescription_medications": {"currently_on": false, "history": []}, "illicit_substances": {"uses": false, "history_of_use": false}}, "behavioral_risk_factors": {"impulsivity": "Low", "risk_taking": "Low to Moderate (only in intellectual domains)", "law_compliance":
+"High", "peer_pressure_susceptibility": "Low", "self-regulation": "Moderate to high"}}, "personal_info": {"first_name": "John", "last_name": "Doe", "age": 29, "gender": "Male", "date_of_birth": "1995-08-12", "email": "john.doe@example.com", "phone": "+44 7911 123456", "address": {"street": "123 Main Street", "city": "London", "postal_code": "SW1A 1AA", "country": "United Kingdom"}, "nationality": "British", "marital_status": "Single", "languages_spoken": ["English", "Spanish"], "education":
+[{"level": "Bachelor's", "field": "Computer Science", "institution": "University of Manchester", "year_completed": 2017}, {"level": "Master's", "field": "Data Science", "institution": "Imperial College London", "year_completed": 2019}], "employment": {"current_job_title": "Data Scientist", "company": "TechSolutions Ltd.", "start_date": "2020-03-15", "employment_type": "Full-time"}, "skills": ["Python", "Machine Learning", "SQL", "Data Visualization", "Cloud Computing", "FastAPI", "Docker",
+"Pandas"], "hobbies": [{"name": "Hiking", "frequency": "Every weekend", "preferred_locations": ["Lake District", "Epping Forest"], "purpose": "Stress relief and nature exploration"}, {"name": "Photography", "frequency": "2-3 times a week", "style": "Urban and landscape", "equipment": ["Sony A6400", "Drone"], "shared_on": ["Instagram"]}, {"name": "Playing Guitar", "frequency": "4 times a week", "style": "Acoustic and blues", "goal": "Personal enjoyment and skill improvement"}, {"name":
+"Traveling", "frequency": "Every 2-3 months", "preferred_style": "Solo backpacking", "recent_destinations": ["Italy", "Spain", "Japan"]}, {"name": "Chess", "frequency": "Almost daily (online)", "platforms": ["Chess.com", "Lichess"], "rank": "Intermediate"}], "favorite_foods": ["Sushi", "Margherita Pizza", "Thai Green Curry", "Ramen", "Chocolate Lava Cake"], "dietary_preferences": {"vegetarian": false, "allergies": ["Peanuts"]}, "personality": {"strong_traits": ["Curious", "Detail-oriented",
+"Analytical", "Empathetic", "Disciplined", "Reliable", "Independent", "Good listener"], "weak_traits": ["Overthinks decisions", "Avoids confrontation", "Struggles with spontaneity", "Can be overly self-critical", "Tends to procrastinate under pressure", "Mild social anxiety in large groups"]}, "daily_routine": {"wake_up_time": "07:00", "bed_time": "22:30", "preferred_work_hours": "09:00 - 17:30", "exercise_frequency": "3 times a week", "screen_time": "6-8 hours/day"}, "health": {"height_cm":
+180, "weight_kg": 76, "blood_type": "O+", "chronic_conditions": [], "mental_health": "Stable", "fitness_level": "Moderate", "last_medical_checkup": "2024-10-10", "vaccination_status": {"covid_19": "Fully vaccinated", "flu": "2024-11-01"}, "sleep_quality": "Good"}, "social_connections": {"number_of_close_friends": 4, "best_friend": {"name": "Michael Stone", "since": "2012", "occupation": "UX Designer", "location": "Manchester"}, "social_circle_size": 25, "online_presence": {"platforms_active":
+["LinkedIn", "GitHub", "Instagram"], "average_daily_interactions": 15}}, "relatives": [{"relation": "Mother", "name": "Elizabeth Doe", "age": 60, "location": "Liverpool", "relationship_quality": "Very good"}, {"relation": "Father", "name": "Richard Doe", "age": 62, "location": "Liverpool", "relationship_quality": "Good"}, {"relation": "Sister", "name": "Emily Doe", "age": 25, "location": "Bristol", "relationship_quality": "Very good"}], "partners_history": [{"name": "Anna Mitchell", "duration":
+"2018-2021", "reason_for_breakup": "Long-distance challenges", "current_relationship": "Friendly"}, {"name": "Claire Bennett", "duration": "2022-2023", "reason_for_breakup": "Different life goals", "current_relationship": "No contact"}], "current_relationship_status": {"status": "Single", "looking_for": "Serious relationship", "last_date": "2025-03-15"}, "motivations_and_values": {"core_values": ["Integrity", "Growth", "Kindness", "Autonomy"], "motivated_by": ["Learning new things", "Meaningful
+work", "Recognition"], "stressed_by": ["Uncertainty", "Last-minute changes", "Crowded environments"], "coping_mechanisms": ["Walking", "Listening to music", "Writing journal entries"]}, "behavioral_tendencies": {"decision_style": "Analytical, slow but thorough", "conflict_reaction": "Avoidant, prefers indirect resolution", "goal_commitment": "High if internally motivated", "change_resistance": "Moderate", "social_energy": "Low-medium (introvert)"}, "goals": ["Become a lead data scientist",
+"Build an open-source AI tool", "Run a half marathon", "Travel to New Zealand"], "favorite_books": ["Sapiens by Yuval Noah Harari", "The Pragmatic Programmer", "Atomic Habits by James Clear", "Thinking, Fast and Slow by Daniel Kahneman"], "travel_history": ["Japan", "Spain", "Canada", "Italy", "Germany"], "social_links": {"linkedin": "https://www.linkedin.com/in/johndoe", "github": "https://github.com/johndoe", "website": "https://johndoe.dev"}}, "psychological_profile": {"mbti_type": "INTP",
+"big_five_traits": {"openness": 0.87, "conscientiousness": 0.68, "extraversion": 0.31, "agreeableness": 0.73, "neuroticism": 0.56}, "emotional_profile": {"baseline_mood": "Calm", "emotional_triggers": ["Criticism", "Being interrupted", "Unexpected changes"], "typical_emotional_responses": {"stress": "Withdraws, seeks quiet time", "anger": "Rare, internalized, passive", "excitement": "Increased focus and talkativeness", "joy": "Visible through small physical gestures"},
+"emotion_regulation_strategies": ["Walking", "Meditation", "Writing", "Talking to a friend"]}, "beliefs_and_alignment": {"political_alignment": "Moderate left-leaning", "beliefs": {"environment": "Supports green tech and sustainable living", "economy": "Pro-innovation, supports universal basic income", "education": "Advocates for accessible higher education", "technology": "Strongly pro-AI and digital transformation"}, "civic_engagement": {"votes_regularly": true, "participates_in_local_events":
+false, "donates_to_causes": ["Environmental NGOs", "Digital rights orgs"]}}, "media_consumption": {"news_sources": ["BBC", "The Guardian", "Medium Tech & Data"], "entertainment": {"tv_series": ["Black Mirror", "The Expanse", "Mr. Robot"], "movies": ["Inception", "Interstellar", "The Social Network"], "games": ["The Witcher 3", "Civilization VI"]}, "social_media_usage": {"platforms": ["Reddit", "YouTube", "Instagram"], "daily_time_spent_minutes": 90, "main_purpose": ["Learning", "Entertainment",
+"Social updates"]}}, "predictive_behaviors": {"under_pressure": "Withdraws, works solo, avoids delegation", "when_confused": "Seeks online forums, YouTube explainers, or books", "in_conflict": "Avoids direct confrontation, prefers written expression", "when_excited": "Takes on new projects, talks faster, sleeps less", "on_success": "Celebrates quietly, shares online with close circle", "on_failure": "Self-critical, re-analyzes decisions, withdraws temporarily"}}}
+
+//////// System Response:
+
+Your first name is John, and you have been working at TechSolutions Ltd. since 2017. Your current job title is Data Scientist.
+
+//////// Time for RAG generation: 0.01 seconds
+
+//////// Time Taken to Response: 0.66 seconds
+
+//////// Total Time: 0.66 seconds
+
+///////// Record 4 ////////////
+Timestamp: 2025-04-30 00:54:30
+
+//////// Query:
+
+List all the technical skills I’ve been recorded as having.
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: {"_id": "john", "background_and_behavioral_risks": {"criminal_record": {"has_criminal_record": false, "details": []}, "alcohol_consumption": {"consumes_alcohol": true, "frequency": "Occasionally (1-2 times a month)", "preferred_drinks": ["Craft beer", "Red wine"], "context": "Usually social events or celebrations", "history_of_abuse":
+false}, "substance_use": {"tobacco": {"uses": false, "history_of_use": false}, "cannabis": {"uses": "Occasionally", "frequency": "A few times per year", "context": "Social settings or creative mood", "history_of_abuse": false}, "prescription_medications": {"currently_on": false, "history": []}, "illicit_substances": {"uses": false, "history_of_use": false}}, "behavioral_risk_factors": {"impulsivity": "Low", "risk_taking": "Low to Moderate (only in intellectual domains)", "law_compliance":
+"High", "peer_pressure_susceptibility": "Low", "self-regulation": "Moderate to high"}}, "personal_info": {"first_name": "John", "last_name": "Doe", "age": 29, "gender": "Male", "date_of_birth": "1995-08-12", "email": "john.doe@example.com", "phone": "+44 7911 123456", "address": {"street": "123 Main Street", "city": "London", "postal_code": "SW1A 1AA", "country": "United Kingdom"}, "nationality": "British", "marital_status": "Single", "languages_spoken": ["English", "Spanish"], "education":
+[{"level": "Bachelor's", "field": "Computer Science", "institution": "University of Manchester", "year_completed": 2017}, {"level": "Master's", "field": "Data Science", "institution": "Imperial College London", "year_completed": 2019}], "employment": {"current_job_title": "Data Scientist", "company": "TechSolutions Ltd.", "start_date": "2020-03-15", "employment_type": "Full-time"}, "skills": ["Python", "Machine Learning", "SQL", "Data Visualization", "Cloud Computing", "FastAPI", "Docker",
+"Pandas"], "hobbies": [{"name": "Hiking", "frequency": "Every weekend", "preferred_locations": ["Lake District", "Epping Forest"], "purpose": "Stress relief and nature exploration"}, {"name": "Photography", "frequency": "2-3 times a week", "style": "Urban and landscape", "equipment": ["Sony A6400", "Drone"], "shared_on": ["Instagram"]}, {"name": "Playing Guitar", "frequency": "4 times a week", "style": "Acoustic and blues", "goal": "Personal enjoyment and skill improvement"}, {"name":
+"Traveling", "frequency": "Every 2-3 months", "preferred_style": "Solo backpacking", "recent_destinations": ["Italy", "Spain", "Japan"]}, {"name": "Chess", "frequency": "Almost daily (online)", "platforms": ["Chess.com", "Lichess"], "rank": "Intermediate"}], "favorite_foods": ["Sushi", "Margherita Pizza", "Thai Green Curry", "Ramen", "Chocolate Lava Cake"], "dietary_preferences": {"vegetarian": false, "allergies": ["Peanuts"]}, "personality": {"strong_traits": ["Curious", "Detail-oriented",
+"Analytical", "Empathetic", "Disciplined", "Reliable", "Independent", "Good listener"], "weak_traits": ["Overthinks decisions", "Avoids confrontation", "Struggles with spontaneity", "Can be overly self-critical", "Tends to procrastinate under pressure", "Mild social anxiety in large groups"]}, "daily_routine": {"wake_up_time": "07:00", "bed_time": "22:30", "preferred_work_hours": "09:00 - 17:30", "exercise_frequency": "3 times a week", "screen_time": "6-8 hours/day"}, "health": {"height_cm":
+180, "weight_kg": 76, "blood_type": "O+", "chronic_conditions": [], "mental_health": "Stable", "fitness_level": "Moderate", "last_medical_checkup": "2024-10-10", "vaccination_status": {"covid_19": "Fully vaccinated", "flu": "2024-11-01"}, "sleep_quality": "Good"}, "social_connections": {"number_of_close_friends": 4, "best_friend": {"name": "Michael Stone", "since": "2012", "occupation": "UX Designer", "location": "Manchester"}, "social_circle_size": 25, "online_presence": {"platforms_active":
+["LinkedIn", "GitHub", "Instagram"], "average_daily_interactions": 15}}, "relatives": [{"relation": "Mother", "name": "Elizabeth Doe", "age": 60, "location": "Liverpool", "relationship_quality": "Very good"}, {"relation": "Father", "name": "Richard Doe", "age": 62, "location": "Liverpool", "relationship_quality": "Good"}, {"relation": "Sister", "name": "Emily Doe", "age": 25, "location": "Bristol", "relationship_quality": "Very good"}], "partners_history": [{"name": "Anna Mitchell", "duration":
+"2018-2021", "reason_for_breakup": "Long-distance challenges", "current_relationship": "Friendly"}, {"name": "Claire Bennett", "duration": "2022-2023", "reason_for_breakup": "Different life goals", "current_relationship": "No contact"}], "current_relationship_status": {"status": "Single", "looking_for": "Serious relationship", "last_date": "2025-03-15"}, "motivations_and_values": {"core_values": ["Integrity", "Growth", "Kindness", "Autonomy"], "motivated_by": ["Learning new things", "Meaningful
+work", "Recognition"], "stressed_by": ["Uncertainty", "Last-minute changes", "Crowded environments"], "coping_mechanisms": ["Walking", "Listening to music", "Writing journal entries"]}, "behavioral_tendencies": {"decision_style": "Analytical, slow but thorough", "conflict_reaction": "Avoidant, prefers indirect resolution", "goal_commitment": "High if internally motivated", "change_resistance": "Moderate", "social_energy": "Low-medium (introvert)"}, "goals": ["Become a lead data scientist",
+"Build an open-source AI tool", "Run a half marathon", "Travel to New Zealand"], "favorite_books": ["Sapiens by Yuval Noah Harari", "The Pragmatic Programmer", "Atomic Habits by James Clear", "Thinking, Fast and Slow by Daniel Kahneman"], "travel_history": ["Japan", "Spain", "Canada", "Italy", "Germany"], "social_links": {"linkedin": "https://www.linkedin.com/in/johndoe", "github": "https://github.com/johndoe", "website": "https://johndoe.dev"}}, "psychological_profile": {"mbti_type": "INTP",
+"big_five_traits": {"openness": 0.87, "conscientiousness": 0.68, "extraversion": 0.31, "agreeableness": 0.73, "neuroticism": 0.56}, "emotional_profile": {"baseline_mood": "Calm", "emotional_triggers": ["Criticism", "Being interrupted", "Unexpected changes"], "typical_emotional_responses": {"stress": "Withdraws, seeks quiet time", "anger": "Rare, internalized, passive", "excitement": "Increased focus and talkativeness", "joy": "Visible through small physical gestures"},
+"emotion_regulation_strategies": ["Walking", "Meditation", "Writing", "Talking to a friend"]}, "beliefs_and_alignment": {"political_alignment": "Moderate left-leaning", "beliefs": {"environment": "Supports green tech and sustainable living", "economy": "Pro-innovation, supports universal basic income", "education": "Advocates for accessible higher education", "technology": "Strongly pro-AI and digital transformation"}, "civic_engagement": {"votes_regularly": true, "participates_in_local_events":
+false, "donates_to_causes": ["Environmental NGOs", "Digital rights orgs"]}}, "media_consumption": {"news_sources": ["BBC", "The Guardian", "Medium Tech & Data"], "entertainment": {"tv_series": ["Black Mirror", "The Expanse", "Mr. Robot"], "movies": ["Inception", "Interstellar", "The Social Network"], "games": ["The Witcher 3", "Civilization VI"]}, "social_media_usage": {"platforms": ["Reddit", "YouTube", "Instagram"], "daily_time_spent_minutes": 90, "main_purpose": ["Learning", "Entertainment",
+"Social updates"]}}, "predictive_behaviors": {"under_pressure": "Withdraws, works solo, avoids delegation", "when_confused": "Seeks online forums, YouTube explainers, or books", "in_conflict": "Avoids direct confrontation, prefers written expression", "when_excited": "Takes on new projects, talks faster, sleeps less", "on_success": "Celebrates quietly, shares online with close circle", "on_failure": "Self-critical, re-analyzes decisions, withdraws temporarily"}}}
+
+//////// System Response:
+
+Here is a list of the technical skills you have been recorded as having: * Python * Machine Learning * SQL * Data Visualization * Cloud Computing * FastAPI * Docker * Pandas
+
+//////// Time for RAG generation: 0.02 seconds
+
+//////// Time Taken to Response: 1.10 seconds
+
+//////// Total Time: 1.12 seconds
+
+///////// Record 5 ////////////
+Timestamp: 2025-04-30 00:54:51
+
+//////// Query:
+
+What are my biggest psychological strengths and weaknesses?
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: {"_id": "john", "background_and_behavioral_risks": {"criminal_record": {"has_criminal_record": false, "details": []}, "alcohol_consumption": {"consumes_alcohol": true, "frequency": "Occasionally (1-2 times a month)", "preferred_drinks": ["Craft beer", "Red wine"], "context": "Usually social events or celebrations", "history_of_abuse":
+false}, "substance_use": {"tobacco": {"uses": false, "history_of_use": false}, "cannabis": {"uses": "Occasionally", "frequency": "A few times per year", "context": "Social settings or creative mood", "history_of_abuse": false}, "prescription_medications": {"currently_on": false, "history": []}, "illicit_substances": {"uses": false, "history_of_use": false}}, "behavioral_risk_factors": {"impulsivity": "Low", "risk_taking": "Low to Moderate (only in intellectual domains)", "law_compliance":
+"High", "peer_pressure_susceptibility": "Low", "self-regulation": "Moderate to high"}}, "personal_info": {"first_name": "John", "last_name": "Doe", "age": 29, "gender": "Male", "date_of_birth": "1995-08-12", "email": "john.doe@example.com", "phone": "+44 7911 123456", "address": {"street": "123 Main Street", "city": "London", "postal_code": "SW1A 1AA", "country": "United Kingdom"}, "nationality": "British", "marital_status": "Single", "languages_spoken": ["English", "Spanish"], "education":
+[{"level": "Bachelor's", "field": "Computer Science", "institution": "University of Manchester", "year_completed": 2017}, {"level": "Master's", "field": "Data Science", "institution": "Imperial College London", "year_completed": 2019}], "employment": {"current_job_title": "Data Scientist", "company": "TechSolutions Ltd.", "start_date": "2020-03-15", "employment_type": "Full-time"}, "skills": ["Python", "Machine Learning", "SQL", "Data Visualization", "Cloud Computing", "FastAPI", "Docker",
+"Pandas"], "hobbies": [{"name": "Hiking", "frequency": "Every weekend", "preferred_locations": ["Lake District", "Epping Forest"], "purpose": "Stress relief and nature exploration"}, {"name": "Photography", "frequency": "2-3 times a week", "style": "Urban and landscape", "equipment": ["Sony A6400", "Drone"], "shared_on": ["Instagram"]}, {"name": "Playing Guitar", "frequency": "4 times a week", "style": "Acoustic and blues", "goal": "Personal enjoyment and skill improvement"}, {"name":
+"Traveling", "frequency": "Every 2-3 months", "preferred_style": "Solo backpacking", "recent_destinations": ["Italy", "Spain", "Japan"]}, {"name": "Chess", "frequency": "Almost daily (online)", "platforms": ["Chess.com", "Lichess"], "rank": "Intermediate"}], "favorite_foods": ["Sushi", "Margherita Pizza", "Thai Green Curry", "Ramen", "Chocolate Lava Cake"], "dietary_preferences": {"vegetarian": false, "allergies": ["Peanuts"]}, "personality": {"strong_traits": ["Curious", "Detail-oriented",
+"Analytical", "Empathetic", "Disciplined", "Reliable", "Independent", "Good listener"], "weak_traits": ["Overthinks decisions", "Avoids confrontation", "Struggles with spontaneity", "Can be overly self-critical", "Tends to procrastinate under pressure", "Mild social anxiety in large groups"]}, "daily_routine": {"wake_up_time": "07:00", "bed_time": "22:30", "preferred_work_hours": "09:00 - 17:30", "exercise_frequency": "3 times a week", "screen_time": "6-8 hours/day"}, "health": {"height_cm":
+180, "weight_kg": 76, "blood_type": "O+", "chronic_conditions": [], "mental_health": "Stable", "fitness_level": "Moderate", "last_medical_checkup": "2024-10-10", "vaccination_status": {"covid_19": "Fully vaccinated", "flu": "2024-11-01"}, "sleep_quality": "Good"}, "social_connections": {"number_of_close_friends": 4, "best_friend": {"name": "Michael Stone", "since": "2012", "occupation": "UX Designer", "location": "Manchester"}, "social_circle_size": 25, "online_presence": {"platforms_active":
+["LinkedIn", "GitHub", "Instagram"], "average_daily_interactions": 15}}, "relatives": [{"relation": "Mother", "name": "Elizabeth Doe", "age": 60, "location": "Liverpool", "relationship_quality": "Very good"}, {"relation": "Father", "name": "Richard Doe", "age": 62, "location": "Liverpool", "relationship_quality": "Good"}, {"relation": "Sister", "name": "Emily Doe", "age": 25, "location": "Bristol", "relationship_quality": "Very good"}], "partners_history": [{"name": "Anna Mitchell", "duration":
+"2018-2021", "reason_for_breakup": "Long-distance challenges", "current_relationship": "Friendly"}, {"name": "Claire Bennett", "duration": "2022-2023", "reason_for_breakup": "Different life goals", "current_relationship": "No contact"}], "current_relationship_status": {"status": "Single", "looking_for": "Serious relationship", "last_date": "2025-03-15"}, "motivations_and_values": {"core_values": ["Integrity", "Growth", "Kindness", "Autonomy"], "motivated_by": ["Learning new things", "Meaningful
+work", "Recognition"], "stressed_by": ["Uncertainty", "Last-minute changes", "Crowded environments"], "coping_mechanisms": ["Walking", "Listening to music", "Writing journal entries"]}, "behavioral_tendencies": {"decision_style": "Analytical, slow but thorough", "conflict_reaction": "Avoidant, prefers indirect resolution", "goal_commitment": "High if internally motivated", "change_resistance": "Moderate", "social_energy": "Low-medium (introvert)"}, "goals": ["Become a lead data scientist",
+"Build an open-source AI tool", "Run a half marathon", "Travel to New Zealand"], "favorite_books": ["Sapiens by Yuval Noah Harari", "The Pragmatic Programmer", "Atomic Habits by James Clear", "Thinking, Fast and Slow by Daniel Kahneman"], "travel_history": ["Japan", "Spain", "Canada", "Italy", "Germany"], "social_links": {"linkedin": "https://www.linkedin.com/in/johndoe", "github": "https://github.com/johndoe", "website": "https://johndoe.dev"}}, "psychological_profile": {"mbti_type": "INTP",
+"big_five_traits": {"openness": 0.87, "conscientiousness": 0.68, "extraversion": 0.31, "agreeableness": 0.73, "neuroticism": 0.56}, "emotional_profile": {"baseline_mood": "Calm", "emotional_triggers": ["Criticism", "Being interrupted", "Unexpected changes"], "typical_emotional_responses": {"stress": "Withdraws, seeks quiet time", "anger": "Rare, internalized, passive", "excitement": "Increased focus and talkativeness", "joy": "Visible through small physical gestures"},
+"emotion_regulation_strategies": ["Walking", "Meditation", "Writing", "Talking to a friend"]}, "beliefs_and_alignment": {"political_alignment": "Moderate left-leaning", "beliefs": {"environment": "Supports green tech and sustainable living", "economy": "Pro-innovation, supports universal basic income", "education": "Advocates for accessible higher education", "technology": "Strongly pro-AI and digital transformation"}, "civic_engagement": {"votes_regularly": true, "participates_in_local_events":
+false, "donates_to_causes": ["Environmental NGOs", "Digital rights orgs"]}}, "media_consumption": {"news_sources": ["BBC", "The Guardian", "Medium Tech & Data"], "entertainment": {"tv_series": ["Black Mirror", "The Expanse", "Mr. Robot"], "movies": ["Inception", "Interstellar", "The Social Network"], "games": ["The Witcher 3", "Civilization VI"]}, "social_media_usage": {"platforms": ["Reddit", "YouTube", "Instagram"], "daily_time_spent_minutes": 90, "main_purpose": ["Learning", "Entertainment",
+"Social updates"]}}, "predictive_behaviors": {"under_pressure": "Withdraws, works solo, avoids delegation", "when_confused": "Seeks online forums, YouTube explainers, or books", "in_conflict": "Avoids direct confrontation, prefers written expression", "when_excited": "Takes on new projects, talks faster, sleeps less", "on_success": "Celebrates quietly, shares online with close circle", "on_failure": "Self-critical, re-analyzes decisions, withdraws temporarily"}}}
+
+//////// System Response:
+
+Based on your profile, here’s a breakdown of your key psychological strengths and weaknesses: **Psychological Strengths:** * **Analytical & Detail-Oriented:** You possess strong analytical skills and a tendency to thoroughly examine things. This translates into being excellent at problem-solving and understanding complex information – a strength for data science and potentially many other fields. * **Highly Curious & Insightful:** Your curiosity is a significant asset, allowing you to dig deeper
+into topics and uncover valuable insights. You’re also adept at identifying patterns and trends, which can be beneficial in research and analysis. * **Reliable & Disciplined:** Your commitment to consistency and thoroughness makes you dependable – a valuable trait in any role requiring accuracy and follow-through. You tend to stick with your plans, which is helpful for projects. * **Independent Thinking:** You’re capable of independent thought and aren't easily swayed by others. This allows you
+to approach challenges methodically. * **Good Listener & Communicator:** Your empathy and ability to listen attentively can be incredibly valuable in team settings or when dealing with sensitive situations. **Psychological Weaknesses:** * **Overthinks Decisions:** You tend to analyze every possible outcome, which can lead to overthinking and delays. It’s important to find a balance between thoroughness and action. * **Avoidance of Confrontation & Social Anxiety (in large groups):** While you
+value integrity, your tendency to avoid confrontation in social situations – particularly when dealing with larger groups – could be an area for growth. It's worth exploring ways to express your opinions more confidently without feeling overwhelmed. * **Self-Critical Tendencies:** You can get caught up in internal assessments and self-doubt, which can hinder progress on projects or lead to procrastination. Practicing self-compassion is key. * **Tendency Towards Procrastination Under Pressure:**
+When faced with demanding deadlines or challenging situations, you might experience a slowdown – potentially leading to missed opportunities. It's important to develop strategies for managing stress and maintaining momentum. * **Limited Emotional Expression (in conflict):** While you value integrity, your tendency to avoid direct confrontation can sometimes make it difficult to effectively address conflicts. Learning to express emotions constructively is crucial. To summarize, while you have
+significant strengths related to analytical thinking and reliability, your tendency to overthink and social anxiety could be areas for refinement.
+
+//////// Time for RAG generation: 0.01 seconds
+
+//////// Time Taken to Response: 7.11 seconds
+
+//////// Total Time: 7.12 seconds
+
+///////// Record 6 ////////////
+Timestamp: 2025-04-30 00:55:02
+
+//////// Query:
+
+When was my last medical checkup, and am I vaccinated against COVID and flu?
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: {"_id": "john", "background_and_behavioral_risks": {"criminal_record": {"has_criminal_record": false, "details": []}, "alcohol_consumption": {"consumes_alcohol": true, "frequency": "Occasionally (1-2 times a month)", "preferred_drinks": ["Craft beer", "Red wine"], "context": "Usually social events or celebrations", "history_of_abuse":
+false}, "substance_use": {"tobacco": {"uses": false, "history_of_use": false}, "cannabis": {"uses": "Occasionally", "frequency": "A few times per year", "context": "Social settings or creative mood", "history_of_abuse": false}, "prescription_medications": {"currently_on": false, "history": []}, "illicit_substances": {"uses": false, "history_of_use": false}}, "behavioral_risk_factors": {"impulsivity": "Low", "risk_taking": "Low to Moderate (only in intellectual domains)", "law_compliance":
+"High", "peer_pressure_susceptibility": "Low", "self-regulation": "Moderate to high"}}, "personal_info": {"first_name": "John", "last_name": "Doe", "age": 29, "gender": "Male", "date_of_birth": "1995-08-12", "email": "john.doe@example.com", "phone": "+44 7911 123456", "address": {"street": "123 Main Street", "city": "London", "postal_code": "SW1A 1AA", "country": "United Kingdom"}, "nationality": "British", "marital_status": "Single", "languages_spoken": ["English", "Spanish"], "education":
+[{"level": "Bachelor's", "field": "Computer Science", "institution": "University of Manchester", "year_completed": 2017}, {"level": "Master's", "field": "Data Science", "institution": "Imperial College London", "year_completed": 2019}], "employment": {"current_job_title": "Data Scientist", "company": "TechSolutions Ltd.", "start_date": "2020-03-15", "employment_type": "Full-time"}, "skills": ["Python", "Machine Learning", "SQL", "Data Visualization", "Cloud Computing", "FastAPI", "Docker",
+"Pandas"], "hobbies": [{"name": "Hiking", "frequency": "Every weekend", "preferred_locations": ["Lake District", "Epping Forest"], "purpose": "Stress relief and nature exploration"}, {"name": "Photography", "frequency": "2-3 times a week", "style": "Urban and landscape", "equipment": ["Sony A6400", "Drone"], "shared_on": ["Instagram"]}, {"name": "Playing Guitar", "frequency": "4 times a week", "style": "Acoustic and blues", "goal": "Personal enjoyment and skill improvement"}, {"name":
+"Traveling", "frequency": "Every 2-3 months", "preferred_style": "Solo backpacking", "recent_destinations": ["Italy", "Spain", "Japan"]}, {"name": "Chess", "frequency": "Almost daily (online)", "platforms": ["Chess.com", "Lichess"], "rank": "Intermediate"}], "favorite_foods": ["Sushi", "Margherita Pizza", "Thai Green Curry", "Ramen", "Chocolate Lava Cake"], "dietary_preferences": {"vegetarian": false, "allergies": ["Peanuts"]}, "personality": {"strong_traits": ["Curious", "Detail-oriented",
+"Analytical", "Empathetic", "Disciplined", "Reliable", "Independent", "Good listener"], "weak_traits": ["Overthinks decisions", "Avoids confrontation", "Struggles with spontaneity", "Can be overly self-critical", "Tends to procrastinate under pressure", "Mild social anxiety in large groups"]}, "daily_routine": {"wake_up_time": "07:00", "bed_time": "22:30", "preferred_work_hours": "09:00 - 17:30", "exercise_frequency": "3 times a week", "screen_time": "6-8 hours/day"}, "health": {"height_cm":
+180, "weight_kg": 76, "blood_type": "O+", "chronic_conditions": [], "mental_health": "Stable", "fitness_level": "Moderate", "last_medical_checkup": "2024-10-10", "vaccination_status": {"covid_19": "Fully vaccinated", "flu": "2024-11-01"}, "sleep_quality": "Good"}, "social_connections": {"number_of_close_friends": 4, "best_friend": {"name": "Michael Stone", "since": "2012", "occupation": "UX Designer", "location": "Manchester"}, "social_circle_size": 25, "online_presence": {"platforms_active":
+["LinkedIn", "GitHub", "Instagram"], "average_daily_interactions": 15}}, "relatives": [{"relation": "Mother", "name": "Elizabeth Doe", "age": 60, "location": "Liverpool", "relationship_quality": "Very good"}, {"relation": "Father", "name": "Richard Doe", "age": 62, "location": "Liverpool", "relationship_quality": "Good"}, {"relation": "Sister", "name": "Emily Doe", "age": 25, "location": "Bristol", "relationship_quality": "Very good"}], "partners_history": [{"name": "Anna Mitchell", "duration":
+"2018-2021", "reason_for_breakup": "Long-distance challenges", "current_relationship": "Friendly"}, {"name": "Claire Bennett", "duration": "2022-2023", "reason_for_breakup": "Different life goals", "current_relationship": "No contact"}], "current_relationship_status": {"status": "Single", "looking_for": "Serious relationship", "last_date": "2025-03-15"}, "motivations_and_values": {"core_values": ["Integrity", "Growth", "Kindness", "Autonomy"], "motivated_by": ["Learning new things", "Meaningful
+work", "Recognition"], "stressed_by": ["Uncertainty", "Last-minute changes", "Crowded environments"], "coping_mechanisms": ["Walking", "Listening to music", "Writing journal entries"]}, "behavioral_tendencies": {"decision_style": "Analytical, slow but thorough", "conflict_reaction": "Avoidant, prefers indirect resolution", "goal_commitment": "High if internally motivated", "change_resistance": "Moderate", "social_energy": "Low-medium (introvert)"}, "goals": ["Become a lead data scientist",
+"Build an open-source AI tool", "Run a half marathon", "Travel to New Zealand"], "favorite_books": ["Sapiens by Yuval Noah Harari", "The Pragmatic Programmer", "Atomic Habits by James Clear", "Thinking, Fast and Slow by Daniel Kahneman"], "travel_history": ["Japan", "Spain", "Canada", "Italy", "Germany"], "social_links": {"linkedin": "https://www.linkedin.com/in/johndoe", "github": "https://github.com/johndoe", "website": "https://johndoe.dev"}}, "psychological_profile": {"mbti_type": "INTP",
+"big_five_traits": {"openness": 0.87, "conscientiousness": 0.68, "extraversion": 0.31, "agreeableness": 0.73, "neuroticism": 0.56}, "emotional_profile": {"baseline_mood": "Calm", "emotional_triggers": ["Criticism", "Being interrupted", "Unexpected changes"], "typical_emotional_responses": {"stress": "Withdraws, seeks quiet time", "anger": "Rare, internalized, passive", "excitement": "Increased focus and talkativeness", "joy": "Visible through small physical gestures"},
+"emotion_regulation_strategies": ["Walking", "Meditation", "Writing", "Talking to a friend"]}, "beliefs_and_alignment": {"political_alignment": "Moderate left-leaning", "beliefs": {"environment": "Supports green tech and sustainable living", "economy": "Pro-innovation, supports universal basic income", "education": "Advocates for accessible higher education", "technology": "Strongly pro-AI and digital transformation"}, "civic_engagement": {"votes_regularly": true, "participates_in_local_events":
+false, "donates_to_causes": ["Environmental NGOs", "Digital rights orgs"]}}, "media_consumption": {"news_sources": ["BBC", "The Guardian", "Medium Tech & Data"], "entertainment": {"tv_series": ["Black Mirror", "The Expanse", "Mr. Robot"], "movies": ["Inception", "Interstellar", "The Social Network"], "games": ["The Witcher 3", "Civilization VI"]}, "social_media_usage": {"platforms": ["Reddit", "YouTube", "Instagram"], "daily_time_spent_minutes": 90, "main_purpose": ["Learning", "Entertainment",
+"Social updates"]}}, "predictive_behaviors": {"under_pressure": "Withdraws, works solo, avoids delegation", "when_confused": "Seeks online forums, YouTube explainers, or books", "in_conflict": "Avoids direct confrontation, prefers written expression", "when_excited": "Takes on new projects, talks faster, sleeps less", "on_success": "Celebrates quietly, shares online with close circle", "on_failure": "Self-critical, re-analyzes decisions, withdraws temporarily"}}}
+
+//////// System Response:
+
+Your last medical checkup was on October 10, 2024. Yes, you are currently fully vaccinated against COVID-19 and the flu.
+
+//////// Time for RAG generation: 0.01 seconds
+
+//////// Time Taken to Response: 0.77 seconds
+
+//////// Total Time: 0.78 seconds
+
+///////// Record 7 ////////////
+Timestamp: 2025-04-30 00:55:42
+
+//////// Query:
+
+How often do I play guitar and what is my reason for doing it?
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: {"_id": "john", "background_and_behavioral_risks": {"criminal_record": {"has_criminal_record": false, "details": []}, "alcohol_consumption": {"consumes_alcohol": true, "frequency": "Occasionally (1-2 times a month)", "preferred_drinks": ["Craft beer", "Red wine"], "context": "Usually social events or celebrations", "history_of_abuse":
+false}, "substance_use": {"tobacco": {"uses": false, "history_of_use": false}, "cannabis": {"uses": "Occasionally", "frequency": "A few times per year", "context": "Social settings or creative mood", "history_of_abuse": false}, "prescription_medications": {"currently_on": false, "history": []}, "illicit_substances": {"uses": false, "history_of_use": false}}, "behavioral_risk_factors": {"impulsivity": "Low", "risk_taking": "Low to Moderate (only in intellectual domains)", "law_compliance":
+"High", "peer_pressure_susceptibility": "Low", "self-regulation": "Moderate to high"}}, "personal_info": {"first_name": "John", "last_name": "Doe", "age": 29, "gender": "Male", "date_of_birth": "1995-08-12", "email": "john.doe@example.com", "phone": "+44 7911 123456", "address": {"street": "123 Main Street", "city": "London", "postal_code": "SW1A 1AA", "country": "United Kingdom"}, "nationality": "British", "marital_status": "Single", "languages_spoken": ["English", "Spanish"], "education":
+[{"level": "Bachelor's", "field": "Computer Science", "institution": "University of Manchester", "year_completed": 2017}, {"level": "Master's", "field": "Data Science", "institution": "Imperial College London", "year_completed": 2019}], "employment": {"current_job_title": "Data Scientist", "company": "TechSolutions Ltd.", "start_date": "2020-03-15", "employment_type": "Full-time"}, "skills": ["Python", "Machine Learning", "SQL", "Data Visualization", "Cloud Computing", "FastAPI", "Docker",
+"Pandas"], "hobbies": [{"name": "Hiking", "frequency": "Every weekend", "preferred_locations": ["Lake District", "Epping Forest"], "purpose": "Stress relief and nature exploration"}, {"name": "Photography", "frequency": "2-3 times a week", "style": "Urban and landscape", "equipment": ["Sony A6400", "Drone"], "shared_on": ["Instagram"]}, {"name": "Playing Guitar", "frequency": "4 times a week", "style": "Acoustic and blues", "goal": "Personal enjoyment and skill improvement"}, {"name":
+"Traveling", "frequency": "Every 2-3 months", "preferred_style": "Solo backpacking", "recent_destinations": ["Italy", "Spain", "Japan"]}, {"name": "Chess", "frequency": "Almost daily (online)", "platforms": ["Chess.com", "Lichess"], "rank": "Intermediate"}], "favorite_foods": ["Sushi", "Margherita Pizza", "Thai Green Curry", "Ramen", "Chocolate Lava Cake"], "dietary_preferences": {"vegetarian": false, "allergies": ["Peanuts"]}, "personality": {"strong_traits": ["Curious", "Detail-oriented",
+"Analytical", "Empathetic", "Disciplined", "Reliable", "Independent", "Good listener"], "weak_traits": ["Overthinks decisions", "Avoids confrontation", "Struggles with spontaneity", "Can be overly self-critical", "Tends to procrastinate under pressure", "Mild social anxiety in large groups"]}, "daily_routine": {"wake_up_time": "07:00", "bed_time": "22:30", "preferred_work_hours": "09:00 - 17:30", "exercise_frequency": "3 times a week", "screen_time": "6-8 hours/day"}, "health": {"height_cm":
+180, "weight_kg": 76, "blood_type": "O+", "chronic_conditions": [], "mental_health": "Stable", "fitness_level": "Moderate", "last_medical_checkup": "2024-10-10", "vaccination_status": {"covid_19": "Fully vaccinated", "flu": "2024-11-01"}, "sleep_quality": "Good"}, "social_connections": {"number_of_close_friends": 4, "best_friend": {"name": "Michael Stone", "since": "2012", "occupation": "UX Designer", "location": "Manchester"}, "social_circle_size": 25, "online_presence": {"platforms_active":
+["LinkedIn", "GitHub", "Instagram"], "average_daily_interactions": 15}}, "relatives": [{"relation": "Mother", "name": "Elizabeth Doe", "age": 60, "location": "Liverpool", "relationship_quality": "Very good"}, {"relation": "Father", "name": "Richard Doe", "age": 62, "location": "Liverpool", "relationship_quality": "Good"}, {"relation": "Sister", "name": "Emily Doe", "age": 25, "location": "Bristol", "relationship_quality": "Very good"}], "partners_history": [{"name": "Anna Mitchell", "duration":
+"2018-2021", "reason_for_breakup": "Long-distance challenges", "current_relationship": "Friendly"}, {"name": "Claire Bennett", "duration": "2022-2023", "reason_for_breakup": "Different life goals", "current_relationship": "No contact"}], "current_relationship_status": {"status": "Single", "looking_for": "Serious relationship", "last_date": "2025-03-15"}, "motivations_and_values": {"core_values": ["Integrity", "Growth", "Kindness", "Autonomy"], "motivated_by": ["Learning new things", "Meaningful
+work", "Recognition"], "stressed_by": ["Uncertainty", "Last-minute changes", "Crowded environments"], "coping_mechanisms": ["Walking", "Listening to music", "Writing journal entries"]}, "behavioral_tendencies": {"decision_style": "Analytical, slow but thorough", "conflict_reaction": "Avoidant, prefers indirect resolution", "goal_commitment": "High if internally motivated", "change_resistance": "Moderate", "social_energy": "Low-medium (introvert)"}, "goals": ["Become a lead data scientist",
+"Build an open-source AI tool", "Run a half marathon", "Travel to New Zealand"], "favorite_books": ["Sapiens by Yuval Noah Harari", "The Pragmatic Programmer", "Atomic Habits by James Clear", "Thinking, Fast and Slow by Daniel Kahneman"], "travel_history": ["Japan", "Spain", "Canada", "Italy", "Germany"], "social_links": {"linkedin": "https://www.linkedin.com/in/johndoe", "github": "https://github.com/johndoe", "website": "https://johndoe.dev"}}, "psychological_profile": {"mbti_type": "INTP",
+"big_five_traits": {"openness": 0.87, "conscientiousness": 0.68, "extraversion": 0.31, "agreeableness": 0.73, "neuroticism": 0.56}, "emotional_profile": {"baseline_mood": "Calm", "emotional_triggers": ["Criticism", "Being interrupted", "Unexpected changes"], "typical_emotional_responses": {"stress": "Withdraws, seeks quiet time", "anger": "Rare, internalized, passive", "excitement": "Increased focus and talkativeness", "joy": "Visible through small physical gestures"},
+"emotion_regulation_strategies": ["Walking", "Meditation", "Writing", "Talking to a friend"]}, "beliefs_and_alignment": {"political_alignment": "Moderate left-leaning", "beliefs": {"environment": "Supports green tech and sustainable living", "economy": "Pro-innovation, supports universal basic income", "education": "Advocates for accessible higher education", "technology": "Strongly pro-AI and digital transformation"}, "civic_engagement": {"votes_regularly": true, "participates_in_local_events":
+false, "donates_to_causes": ["Environmental NGOs", "Digital rights orgs"]}}, "media_consumption": {"news_sources": ["BBC", "The Guardian", "Medium Tech & Data"], "entertainment": {"tv_series": ["Black Mirror", "The Expanse", "Mr. Robot"], "movies": ["Inception", "Interstellar", "The Social Network"], "games": ["The Witcher 3", "Civilization VI"]}, "social_media_usage": {"platforms": ["Reddit", "YouTube", "Instagram"], "daily_time_spent_minutes": 90, "main_purpose": ["Learning", "Entertainment",
+"Social updates"]}}, "predictive_behaviors": {"under_pressure": "Withdraws, works solo, avoids delegation", "when_confused": "Seeks online forums, YouTube explainers, or books", "in_conflict": "Avoids direct confrontation, prefers written expression", "when_excited": "Takes on new projects, talks faster, sleeps less", "on_success": "Celebrates quietly, shares online with close circle", "on_failure": "Self-critical, re-analyzes decisions, withdraws temporarily"}}}
+
+//////// System Response:
+
+Your guitar playing frequency is “Almost daily (online),” which means you play it 2-3 times per week. Your primary reason for playing guitar is stress relief and nature exploration, as well as personal enjoyment and skill improvement.
+
+//////// Time for RAG generation: 0.02 seconds
+
+//////// Time Taken to Response: 0.97 seconds
+
+//////// Total Time: 0.99 seconds
+
+///////// Record 8 ////////////
+Timestamp: 2025-04-30 00:55:56
+
+//////// Query:
+
+Which countries have I traveled to recently and what’s my travel style?
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: {"_id": "john", "background_and_behavioral_risks": {"criminal_record": {"has_criminal_record": false, "details": []}, "alcohol_consumption": {"consumes_alcohol": true, "frequency": "Occasionally (1-2 times a month)", "preferred_drinks": ["Craft beer", "Red wine"], "context": "Usually social events or celebrations", "history_of_abuse":
+false}, "substance_use": {"tobacco": {"uses": false, "history_of_use": false}, "cannabis": {"uses": "Occasionally", "frequency": "A few times per year", "context": "Social settings or creative mood", "history_of_abuse": false}, "prescription_medications": {"currently_on": false, "history": []}, "illicit_substances": {"uses": false, "history_of_use": false}}, "behavioral_risk_factors": {"impulsivity": "Low", "risk_taking": "Low to Moderate (only in intellectual domains)", "law_compliance":
+"High", "peer_pressure_susceptibility": "Low", "self-regulation": "Moderate to high"}}, "personal_info": {"first_name": "John", "last_name": "Doe", "age": 29, "gender": "Male", "date_of_birth": "1995-08-12", "email": "john.doe@example.com", "phone": "+44 7911 123456", "address": {"street": "123 Main Street", "city": "London", "postal_code": "SW1A 1AA", "country": "United Kingdom"}, "nationality": "British", "marital_status": "Single", "languages_spoken": ["English", "Spanish"], "education":
+[{"level": "Bachelor's", "field": "Computer Science", "institution": "University of Manchester", "year_completed": 2017}, {"level": "Master's", "field": "Data Science", "institution": "Imperial College London", "year_completed": 2019}], "employment": {"current_job_title": "Data Scientist", "company": "TechSolutions Ltd.", "start_date": "2020-03-15", "employment_type": "Full-time"}, "skills": ["Python", "Machine Learning", "SQL", "Data Visualization", "Cloud Computing", "FastAPI", "Docker",
+"Pandas"], "hobbies": [{"name": "Hiking", "frequency": "Every weekend", "preferred_locations": ["Lake District", "Epping Forest"], "purpose": "Stress relief and nature exploration"}, {"name": "Photography", "frequency": "2-3 times a week", "style": "Urban and landscape", "equipment": ["Sony A6400", "Drone"], "shared_on": ["Instagram"]}, {"name": "Playing Guitar", "frequency": "4 times a week", "style": "Acoustic and blues", "goal": "Personal enjoyment and skill improvement"}, {"name":
+"Traveling", "frequency": "Every 2-3 months", "preferred_style": "Solo backpacking", "recent_destinations": ["Italy", "Spain", "Japan"]}, {"name": "Chess", "frequency": "Almost daily (online)", "platforms": ["Chess.com", "Lichess"], "rank": "Intermediate"}], "favorite_foods": ["Sushi", "Margherita Pizza", "Thai Green Curry", "Ramen", "Chocolate Lava Cake"], "dietary_preferences": {"vegetarian": false, "allergies": ["Peanuts"]}, "personality": {"strong_traits": ["Curious", "Detail-oriented",
+"Analytical", "Empathetic", "Disciplined", "Reliable", "Independent", "Good listener"], "weak_traits": ["Overthinks decisions", "Avoids confrontation", "Struggles with spontaneity", "Can be overly self-critical", "Tends to procrastinate under pressure", "Mild social anxiety in large groups"]}, "daily_routine": {"wake_up_time": "07:00", "bed_time": "22:30", "preferred_work_hours": "09:00 - 17:30", "exercise_frequency": "3 times a week", "screen_time": "6-8 hours/day"}, "health": {"height_cm":
+180, "weight_kg": 76, "blood_type": "O+", "chronic_conditions": [], "mental_health": "Stable", "fitness_level": "Moderate", "last_medical_checkup": "2024-10-10", "vaccination_status": {"covid_19": "Fully vaccinated", "flu": "2024-11-01"}, "sleep_quality": "Good"}, "social_connections": {"number_of_close_friends": 4, "best_friend": {"name": "Michael Stone", "since": "2012", "occupation": "UX Designer", "location": "Manchester"}, "social_circle_size": 25, "online_presence": {"platforms_active":
+["LinkedIn", "GitHub", "Instagram"], "average_daily_interactions": 15}}, "relatives": [{"relation": "Mother", "name": "Elizabeth Doe", "age": 60, "location": "Liverpool", "relationship_quality": "Very good"}, {"relation": "Father", "name": "Richard Doe", "age": 62, "location": "Liverpool", "relationship_quality": "Good"}, {"relation": "Sister", "name": "Emily Doe", "age": 25, "location": "Bristol", "relationship_quality": "Very good"}], "partners_history": [{"name": "Anna Mitchell", "duration":
+"2018-2021", "reason_for_breakup": "Long-distance challenges", "current_relationship": "Friendly"}, {"name": "Claire Bennett", "duration": "2022-2023", "reason_for_breakup": "Different life goals", "current_relationship": "No contact"}], "current_relationship_status": {"status": "Single", "looking_for": "Serious relationship", "last_date": "2025-03-15"}, "motivations_and_values": {"core_values": ["Integrity", "Growth", "Kindness", "Autonomy"], "motivated_by": ["Learning new things", "Meaningful
+work", "Recognition"], "stressed_by": ["Uncertainty", "Last-minute changes", "Crowded environments"], "coping_mechanisms": ["Walking", "Listening to music", "Writing journal entries"]}, "behavioral_tendencies": {"decision_style": "Analytical, slow but thorough", "conflict_reaction": "Avoidant, prefers indirect resolution", "goal_commitment": "High if internally motivated", "change_resistance": "Moderate", "social_energy": "Low-medium (introvert)"}, "goals": ["Become a lead data scientist",
+"Build an open-source AI tool", "Run a half marathon", "Travel to New Zealand"], "favorite_books": ["Sapiens by Yuval Noah Harari", "The Pragmatic Programmer", "Atomic Habits by James Clear", "Thinking, Fast and Slow by Daniel Kahneman"], "travel_history": ["Japan", "Spain", "Canada", "Italy", "Germany"], "social_links": {"linkedin": "https://www.linkedin.com/in/johndoe", "github": "https://github.com/johndoe", "website": "https://johndoe.dev"}}, "psychological_profile": {"mbti_type": "INTP",
+"big_five_traits": {"openness": 0.87, "conscientiousness": 0.68, "extraversion": 0.31, "agreeableness": 0.73, "neuroticism": 0.56}, "emotional_profile": {"baseline_mood": "Calm", "emotional_triggers": ["Criticism", "Being interrupted", "Unexpected changes"], "typical_emotional_responses": {"stress": "Withdraws, seeks quiet time", "anger": "Rare, internalized, passive", "excitement": "Increased focus and talkativeness", "joy": "Visible through small physical gestures"},
+"emotion_regulation_strategies": ["Walking", "Meditation", "Writing", "Talking to a friend"]}, "beliefs_and_alignment": {"political_alignment": "Moderate left-leaning", "beliefs": {"environment": "Supports green tech and sustainable living", "economy": "Pro-innovation, supports universal basic income", "education": "Advocates for accessible higher education", "technology": "Strongly pro-AI and digital transformation"}, "civic_engagement": {"votes_regularly": true, "participates_in_local_events":
+false, "donates_to_causes": ["Environmental NGOs", "Digital rights orgs"]}}, "media_consumption": {"news_sources": ["BBC", "The Guardian", "Medium Tech & Data"], "entertainment": {"tv_series": ["Black Mirror", "The Expanse", "Mr. Robot"], "movies": ["Inception", "Interstellar", "The Social Network"], "games": ["The Witcher 3", "Civilization VI"]}, "social_media_usage": {"platforms": ["Reddit", "YouTube", "Instagram"], "daily_time_spent_minutes": 90, "main_purpose": ["Learning", "Entertainment",
+"Social updates"]}}, "predictive_behaviors": {"under_pressure": "Withdraws, works solo, avoids delegation", "when_confused": "Seeks online forums, YouTube explainers, or books", "in_conflict": "Avoids direct confrontation, prefers written expression", "when_excited": "Takes on new projects, talks faster, sleeps less", "on_success": "Celebrates quietly, shares online with close circle", "on_failure": "Self-critical, re-analyzes decisions, withdraws temporarily"}}}
+
+//////// System Response:
+
+Your travel history includes the following destinations: Japan, Spain, Canada, Italy, and Germany. Your travel style is characterized as analytical, slow but thorough, and leans towards a more introspective approach with a strong interest in learning new things and experiencing different cultures. You tend to seek quiet time when stressed and enjoy reading, writing, and thoughtful discussions.
+
+//////// Time for RAG generation: 0.01 seconds
+
+//////// Time Taken to Response: 1.19 seconds
+
+//////// Total Time: 1.19 seconds
+
+///////// Record 9 ////////////
+Timestamp: 2025-04-30 00:56:15
+
+//////// Query:
+
+How do I typically react when I’m under pressure or experience failure?
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: {"_id": "john", "background_and_behavioral_risks": {"criminal_record": {"has_criminal_record": false, "details": []}, "alcohol_consumption": {"consumes_alcohol": true, "frequency": "Occasionally (1-2 times a month)", "preferred_drinks": ["Craft beer", "Red wine"], "context": "Usually social events or celebrations", "history_of_abuse":
+false}, "substance_use": {"tobacco": {"uses": false, "history_of_use": false}, "cannabis": {"uses": "Occasionally", "frequency": "A few times per year", "context": "Social settings or creative mood", "history_of_abuse": false}, "prescription_medications": {"currently_on": false, "history": []}, "illicit_substances": {"uses": false, "history_of_use": false}}, "behavioral_risk_factors": {"impulsivity": "Low", "risk_taking": "Low to Moderate (only in intellectual domains)", "law_compliance":
+"High", "peer_pressure_susceptibility": "Low", "self-regulation": "Moderate to high"}}, "personal_info": {"first_name": "John", "last_name": "Doe", "age": 29, "gender": "Male", "date_of_birth": "1995-08-12", "email": "john.doe@example.com", "phone": "+44 7911 123456", "address": {"street": "123 Main Street", "city": "London", "postal_code": "SW1A 1AA", "country": "United Kingdom"}, "nationality": "British", "marital_status": "Single", "languages_spoken": ["English", "Spanish"], "education":
+[{"level": "Bachelor's", "field": "Computer Science", "institution": "University of Manchester", "year_completed": 2017}, {"level": "Master's", "field": "Data Science", "institution": "Imperial College London", "year_completed": 2019}], "employment": {"current_job_title": "Data Scientist", "company": "TechSolutions Ltd.", "start_date": "2020-03-15", "employment_type": "Full-time"}, "skills": ["Python", "Machine Learning", "SQL", "Data Visualization", "Cloud Computing", "FastAPI", "Docker",
+"Pandas"], "hobbies": [{"name": "Hiking", "frequency": "Every weekend", "preferred_locations": ["Lake District", "Epping Forest"], "purpose": "Stress relief and nature exploration"}, {"name": "Photography", "frequency": "2-3 times a week", "style": "Urban and landscape", "equipment": ["Sony A6400", "Drone"], "shared_on": ["Instagram"]}, {"name": "Playing Guitar", "frequency": "4 times a week", "style": "Acoustic and blues", "goal": "Personal enjoyment and skill improvement"}, {"name":
+"Traveling", "frequency": "Every 2-3 months", "preferred_style": "Solo backpacking", "recent_destinations": ["Italy", "Spain", "Japan"]}, {"name": "Chess", "frequency": "Almost daily (online)", "platforms": ["Chess.com", "Lichess"], "rank": "Intermediate"}], "favorite_foods": ["Sushi", "Margherita Pizza", "Thai Green Curry", "Ramen", "Chocolate Lava Cake"], "dietary_preferences": {"vegetarian": false, "allergies": ["Peanuts"]}, "personality": {"strong_traits": ["Curious", "Detail-oriented",
+"Analytical", "Empathetic", "Disciplined", "Reliable", "Independent", "Good listener"], "weak_traits": ["Overthinks decisions", "Avoids confrontation", "Struggles with spontaneity", "Can be overly self-critical", "Tends to procrastinate under pressure", "Mild social anxiety in large groups"]}, "daily_routine": {"wake_up_time": "07:00", "bed_time": "22:30", "preferred_work_hours": "09:00 - 17:30", "exercise_frequency": "3 times a week", "screen_time": "6-8 hours/day"}, "health": {"height_cm":
+180, "weight_kg": 76, "blood_type": "O+", "chronic_conditions": [], "mental_health": "Stable", "fitness_level": "Moderate", "last_medical_checkup": "2024-10-10", "vaccination_status": {"covid_19": "Fully vaccinated", "flu": "2024-11-01"}, "sleep_quality": "Good"}, "social_connections": {"number_of_close_friends": 4, "best_friend": {"name": "Michael Stone", "since": "2012", "occupation": "UX Designer", "location": "Manchester"}, "social_circle_size": 25, "online_presence": {"platforms_active":
+["LinkedIn", "GitHub", "Instagram"], "average_daily_interactions": 15}}, "relatives": [{"relation": "Mother", "name": "Elizabeth Doe", "age": 60, "location": "Liverpool", "relationship_quality": "Very good"}, {"relation": "Father", "name": "Richard Doe", "age": 62, "location": "Liverpool", "relationship_quality": "Good"}, {"relation": "Sister", "name": "Emily Doe", "age": 25, "location": "Bristol", "relationship_quality": "Very good"}], "partners_history": [{"name": "Anna Mitchell", "duration":
+"2018-2021", "reason_for_breakup": "Long-distance challenges", "current_relationship": "Friendly"}, {"name": "Claire Bennett", "duration": "2022-2023", "reason_for_breakup": "Different life goals", "current_relationship": "No contact"}], "current_relationship_status": {"status": "Single", "looking_for": "Serious relationship", "last_date": "2025-03-15"}, "motivations_and_values": {"core_values": ["Integrity", "Growth", "Kindness", "Autonomy"], "motivated_by": ["Learning new things", "Meaningful
+work", "Recognition"], "stressed_by": ["Uncertainty", "Last-minute changes", "Crowded environments"], "coping_mechanisms": ["Walking", "Listening to music", "Writing journal entries"]}, "behavioral_tendencies": {"decision_style": "Analytical, slow but thorough", "conflict_reaction": "Avoidant, prefers indirect resolution", "goal_commitment": "High if internally motivated", "change_resistance": "Moderate", "social_energy": "Low-medium (introvert)"}, "goals": ["Become a lead data scientist",
+"Build an open-source AI tool", "Run a half marathon", "Travel to New Zealand"], "favorite_books": ["Sapiens by Yuval Noah Harari", "The Pragmatic Programmer", "Atomic Habits by James Clear", "Thinking, Fast and Slow by Daniel Kahneman"], "travel_history": ["Japan", "Spain", "Canada", "Italy", "Germany"], "social_links": {"linkedin": "https://www.linkedin.com/in/johndoe", "github": "https://github.com/johndoe", "website": "https://johndoe.dev"}}, "psychological_profile": {"mbti_type": "INTP",
+"big_five_traits": {"openness": 0.87, "conscientiousness": 0.68, "extraversion": 0.31, "agreeableness": 0.73, "neuroticism": 0.56}, "emotional_profile": {"baseline_mood": "Calm", "emotional_triggers": ["Criticism", "Being interrupted", "Unexpected changes"], "typical_emotional_responses": {"stress": "Withdraws, seeks quiet time", "anger": "Rare, internalized, passive", "excitement": "Increased focus and talkativeness", "joy": "Visible through small physical gestures"},
+"emotion_regulation_strategies": ["Walking", "Meditation", "Writing", "Talking to a friend"]}, "beliefs_and_alignment": {"political_alignment": "Moderate left-leaning", "beliefs": {"environment": "Supports green tech and sustainable living", "economy": "Pro-innovation, supports universal basic income", "education": "Advocates for accessible higher education", "technology": "Strongly pro-AI and digital transformation"}, "civic_engagement": {"votes_regularly": true, "participates_in_local_events":
+false, "donates_to_causes": ["Environmental NGOs", "Digital rights orgs"]}}, "media_consumption": {"news_sources": ["BBC", "The Guardian", "Medium Tech & Data"], "entertainment": {"tv_series": ["Black Mirror", "The Expanse", "Mr. Robot"], "movies": ["Inception", "Interstellar", "The Social Network"], "games": ["The Witcher 3", "Civilization VI"]}, "social_media_usage": {"platforms": ["Reddit", "YouTube", "Instagram"], "daily_time_spent_minutes": 90, "main_purpose": ["Learning", "Entertainment",
+"Social updates"]}}, "predictive_behaviors": {"under_pressure": "Withdraws, works solo, avoids delegation", "when_confused": "Seeks online forums, YouTube explainers, or books", "in_conflict": "Avoids direct confrontation, prefers written expression", "when_excited": "Takes on new projects, talks faster, sleeps less", "on_success": "Celebrates quietly, shares online with close circle", "on_failure": "Self-critical, re-analyzes decisions, withdraws temporarily"}}}
+
+//////// System Response:
+
+When you're under pressure or experiencing failure, your typical reaction will likely involve a combination of cautiousness and introspection. Here’s a breakdown of what you might do: 1. **Initial Assessment & Slow Down:** You'll almost certainly start by taking a moment to calm down. This isn’t about panic; it’s about regaining control. You might consciously slow down your thoughts, take deep breaths, or step away from the situation for a few minutes. 2. **Analytical Thinking:** You'll begin to
+analyze what happened – why did it go wrong? What were the contributing factors? You might try to identify patterns in situations where you’ve faced challenges before. This involves separating the event from your self-worth. 3. **Seeking Perspective:** You may seek input from trusted individuals or resources—perhaps a mentor, colleague, or friend—to gain different viewpoints on the situation. It's about getting a broader understanding of the problem. 4. **Self-Reflection & Examination:** You’ll
+likely engage in some degree of self-reflection – examining your own actions and decisions that might have contributed to the outcome. It’s a process of learning from mistakes rather than dwelling on them. 5. **Focus on What Can Be Controlled:** Often, you'll shift your focus to what *you* can control—your response, your next steps, or adjusting your approach. You might try to re-evaluate your strategy and find a new path forward. 6. **Quiet Reflection & Processing:** It’s common to take some
+time alone to process the experience – perhaps journaling, meditating, or simply quietly thinking through the situation. 7. **Small Actions:** Sometimes, you'll initiate small, manageable actions—like re-reading a section of an article, writing down a few key takeaways, or taking a short break. It’s important to note that everyone handles pressure differently. This is just a general overview; your individual reactions may be influenced by your personality and past experiences.
+
+//////// Time for RAG generation: 0.01 seconds
+
+//////// Time Taken to Response: 5.87 seconds
+
+//////// Total Time: 5.88 seconds
+
+///////// Record 10 ////////////
+Timestamp: 2025-04-30 00:56:46
+
+//////// Query:
+
+What causes me stress and how do I usually cope with it?
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: {"_id": "john", "background_and_behavioral_risks": {"criminal_record": {"has_criminal_record": false, "details": []}, "alcohol_consumption": {"consumes_alcohol": true, "frequency": "Occasionally (1-2 times a month)", "preferred_drinks": ["Craft beer", "Red wine"], "context": "Usually social events or celebrations", "history_of_abuse":
+false}, "substance_use": {"tobacco": {"uses": false, "history_of_use": false}, "cannabis": {"uses": "Occasionally", "frequency": "A few times per year", "context": "Social settings or creative mood", "history_of_abuse": false}, "prescription_medications": {"currently_on": false, "history": []}, "illicit_substances": {"uses": false, "history_of_use": false}}, "behavioral_risk_factors": {"impulsivity": "Low", "risk_taking": "Low to Moderate (only in intellectual domains)", "law_compliance":
+"High", "peer_pressure_susceptibility": "Low", "self-regulation": "Moderate to high"}}, "personal_info": {"first_name": "John", "last_name": "Doe", "age": 29, "gender": "Male", "date_of_birth": "1995-08-12", "email": "john.doe@example.com", "phone": "+44 7911 123456", "address": {"street": "123 Main Street", "city": "London", "postal_code": "SW1A 1AA", "country": "United Kingdom"}, "nationality": "British", "marital_status": "Single", "languages_spoken": ["English", "Spanish"], "education":
+[{"level": "Bachelor's", "field": "Computer Science", "institution": "University of Manchester", "year_completed": 2017}, {"level": "Master's", "field": "Data Science", "institution": "Imperial College London", "year_completed": 2019}], "employment": {"current_job_title": "Data Scientist", "company": "TechSolutions Ltd.", "start_date": "2020-03-15", "employment_type": "Full-time"}, "skills": ["Python", "Machine Learning", "SQL", "Data Visualization", "Cloud Computing", "FastAPI", "Docker",
+"Pandas"], "hobbies": [{"name": "Hiking", "frequency": "Every weekend", "preferred_locations": ["Lake District", "Epping Forest"], "purpose": "Stress relief and nature exploration"}, {"name": "Photography", "frequency": "2-3 times a week", "style": "Urban and landscape", "equipment": ["Sony A6400", "Drone"], "shared_on": ["Instagram"]}, {"name": "Playing Guitar", "frequency": "4 times a week", "style": "Acoustic and blues", "goal": "Personal enjoyment and skill improvement"}, {"name":
+"Traveling", "frequency": "Every 2-3 months", "preferred_style": "Solo backpacking", "recent_destinations": ["Italy", "Spain", "Japan"]}, {"name": "Chess", "frequency": "Almost daily (online)", "platforms": ["Chess.com", "Lichess"], "rank": "Intermediate"}], "favorite_foods": ["Sushi", "Margherita Pizza", "Thai Green Curry", "Ramen", "Chocolate Lava Cake"], "dietary_preferences": {"vegetarian": false, "allergies": ["Peanuts"]}, "personality": {"strong_traits": ["Curious", "Detail-oriented",
+"Analytical", "Empathetic", "Disciplined", "Reliable", "Independent", "Good listener"], "weak_traits": ["Overthinks decisions", "Avoids confrontation", "Struggles with spontaneity", "Can be overly self-critical", "Tends to procrastinate under pressure", "Mild social anxiety in large groups"]}, "daily_routine": {"wake_up_time": "07:00", "bed_time": "22:30", "preferred_work_hours": "09:00 - 17:30", "exercise_frequency": "3 times a week", "screen_time": "6-8 hours/day"}, "health": {"height_cm":
+180, "weight_kg": 76, "blood_type": "O+", "chronic_conditions": [], "mental_health": "Stable", "fitness_level": "Moderate", "last_medical_checkup": "2024-10-10", "vaccination_status": {"covid_19": "Fully vaccinated", "flu": "2024-11-01"}, "sleep_quality": "Good"}, "social_connections": {"number_of_close_friends": 4, "best_friend": {"name": "Michael Stone", "since": "2012", "occupation": "UX Designer", "location": "Manchester"}, "social_circle_size": 25, "online_presence": {"platforms_active":
+["LinkedIn", "GitHub", "Instagram"], "average_daily_interactions": 15}}, "relatives": [{"relation": "Mother", "name": "Elizabeth Doe", "age": 60, "location": "Liverpool", "relationship_quality": "Very good"}, {"relation": "Father", "name": "Richard Doe", "age": 62, "location": "Liverpool", "relationship_quality": "Good"}, {"relation": "Sister", "name": "Emily Doe", "age": 25, "location": "Bristol", "relationship_quality": "Very good"}], "partners_history": [{"name": "Anna Mitchell", "duration":
+"2018-2021", "reason_for_breakup": "Long-distance challenges", "current_relationship": "Friendly"}, {"name": "Claire Bennett", "duration": "2022-2023", "reason_for_breakup": "Different life goals", "current_relationship": "No contact"}], "current_relationship_status": {"status": "Single", "looking_for": "Serious relationship", "last_date": "2025-03-15"}, "motivations_and_values": {"core_values": ["Integrity", "Growth", "Kindness", "Autonomy"], "motivated_by": ["Learning new things", "Meaningful
+work", "Recognition"], "stressed_by": ["Uncertainty", "Last-minute changes", "Crowded environments"], "coping_mechanisms": ["Walking", "Listening to music", "Writing journal entries"]}, "behavioral_tendencies": {"decision_style": "Analytical, slow but thorough", "conflict_reaction": "Avoidant, prefers indirect resolution", "goal_commitment": "High if internally motivated", "change_resistance": "Moderate", "social_energy": "Low-medium (introvert)"}, "goals": ["Become a lead data scientist",
+"Build an open-source AI tool", "Run a half marathon", "Travel to New Zealand"], "favorite_books": ["Sapiens by Yuval Noah Harari", "The Pragmatic Programmer", "Atomic Habits by James Clear", "Thinking, Fast and Slow by Daniel Kahneman"], "travel_history": ["Japan", "Spain", "Canada", "Italy", "Germany"], "social_links": {"linkedin": "https://www.linkedin.com/in/johndoe", "github": "https://github.com/johndoe", "website": "https://johndoe.dev"}}, "psychological_profile": {"mbti_type": "INTP",
+"big_five_traits": {"openness": 0.87, "conscientiousness": 0.68, "extraversion": 0.31, "agreeableness": 0.73, "neuroticism": 0.56}, "emotional_profile": {"baseline_mood": "Calm", "emotional_triggers": ["Criticism", "Being interrupted", "Unexpected changes"], "typical_emotional_responses": {"stress": "Withdraws, seeks quiet time", "anger": "Rare, internalized, passive", "excitement": "Increased focus and talkativeness", "joy": "Visible through small physical gestures"},
+"emotion_regulation_strategies": ["Walking", "Meditation", "Writing", "Talking to a friend"]}, "beliefs_and_alignment": {"political_alignment": "Moderate left-leaning", "beliefs": {"environment": "Supports green tech and sustainable living", "economy": "Pro-innovation, supports universal basic income", "education": "Advocates for accessible higher education", "technology": "Strongly pro-AI and digital transformation"}, "civic_engagement": {"votes_regularly": true, "participates_in_local_events":
+false, "donates_to_causes": ["Environmental NGOs", "Digital rights orgs"]}}, "media_consumption": {"news_sources": ["BBC", "The Guardian", "Medium Tech & Data"], "entertainment": {"tv_series": ["Black Mirror", "The Expanse", "Mr. Robot"], "movies": ["Inception", "Interstellar", "The Social Network"], "games": ["The Witcher 3", "Civilization VI"]}, "social_media_usage": {"platforms": ["Reddit", "YouTube", "Instagram"], "daily_time_spent_minutes": 90, "main_purpose": ["Learning", "Entertainment",
+"Social updates"]}}, "predictive_behaviors": {"under_pressure": "Withdraws, works solo, avoids delegation", "when_confused": "Seeks online forums, YouTube explainers, or books", "in_conflict": "Avoids direct confrontation, prefers written expression", "when_excited": "Takes on new projects, talks faster, sleeps less", "on_success": "Celebrates quietly, shares online with close circle", "on_failure": "Self-critical, re-analyzes decisions, withdraws temporarily"}}}
+
+//////// System Response:
+
+Based on your profile, you exhibit a moderate level of stress stemming from several factors. Here’s a breakdown of what tends to trigger it for you: **What Causes You Stress:** * **Overthinking Decisions:** This is a significant contributor. You often get caught in cycles of analyzing situations and potential outcomes to the point where it can become overwhelming. * **Avoidance of Confrontation:** You tend to avoid direct confrontation, which can be stressful because it requires you to take
+risks or express your opinions publicly. * **Procrastination under Pressure:** When faced with deadlines or challenges, you often struggle to get started and can procrastinate, adding to the feeling of being overwhelmed. * **Self-Critical Tendencies:** You frequently overanalyze yourself and are prone to self-doubt – this can be unsettling and lead to anxiety. * **Social Anxiety in Large Groups:** While you generally cope well with smaller groups, large social gatherings can trigger feelings of
+unease due to the potential for being observed or judged. **How You Usually Cope With It:** You primarily use a combination of methods: 1. **Walking:** This is a frequent coping mechanism – taking short walks helps clear your head and provides a brief respite from overthinking. 2. **Listening to Music:** Listening to music, especially instrumental or calming tunes, can help you de-stress. 3. **Writing Journal Entries:** The act of putting thoughts into words can be therapeutic for processing
+anxieties. 4. **Talking to a Friend (Michael Stone):** You value your friendship with Michael and often turn to him for support and perspective on difficult situations. 5. **Analyzing Decisions:** When you face a challenge or decision, you'll often take time to carefully consider all possible outcomes before making a move. Do you want me to elaborate on any of these coping strategies?
+
+//////// Time for RAG generation: 0.01 seconds
+
+//////// Time Taken to Response: 5.52 seconds
+
+//////// Total Time: 5.52 seconds
+
+///////// Record 11 ////////////
+Timestamp: 2026-03-03 19:00:12
+
+//////// Query:
+
+hi
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: null
+
+//////// System Response:
+
+Hello! I’m Andrejs Sorstkins, and I’m here to help you explore opportunities.
+
+//////// Time for RAG generation: 0.05 seconds
+
+//////// Time Taken to Response: 15.99 seconds
+
+//////// Total Time: 16.03 seconds
+
+///////// Record 12 ////////////
+Timestamp: 2026-03-03 19:00:27
+
+//////// Query:
+
+what is Andrejs Skills
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: null
+
+//////// System Response:
+
+My skills encompass data analysis, statistical modeling, machine learning, and programming in Python and R. I also possess strong problem-solving and communication abilities.
+
+//////// Time for RAG generation: 0.03 seconds
+
+//////// Time Taken to Response: 0.63 seconds
+
+//////// Total Time: 0.65 seconds
+
+///////// Record 13 ////////////
+Timestamp: 2026-03-03 19:02:10
+
+//////// Query:
+
+Who you represent
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: null
+
+//////// System Response:
+
+I represent Andrejs Sorstkins.
+
+//////// Time for RAG generation: 0.03 seconds
+
+//////// Time Taken to Response: 0.80 seconds
+
+//////// Total Time: 0.82 seconds
+
+///////// Record 14 ////////////
+Timestamp: 2026-03-03 19:02:30
+
+//////// Query:
+
+What projects did Andrejs sorstkins works in
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: null
+
+//////// System Response:
+
+I am an AI assistant representing Andrejs Sorstkins. I don’t have access to that information. Please provide me with the user’s question.
+
+//////// Time for RAG generation: 0.02 seconds
+
+//////// Time Taken to Response: 0.81 seconds
+
+//////// Total Time: 0.83 seconds
+
+///////// Record 15 ////////////
+Timestamp: 2026-03-03 19:04:39
+
+//////// Query:
+
+hi whom you represent
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: null
+
+//////// System Response:
+
+I represent Andrejs Sorstkins.
+
+//////// Time for RAG generation: 0.02 seconds
+
+//////// Time Taken to Response: 0.49 seconds
+
+//////// Total Time: 0.52 seconds
+
+///////// Record 16 ////////////
+Timestamp: 2026-03-03 19:04:52
+
+//////// Query:
+
+What projects did he works on
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: null
+
+//////// System Response:
+
+I am an AI assistant representing Andrejs Sorstkins. I don’t have access to that information.
+
+//////// Time for RAG generation: 0.02 seconds
+
+//////// Time Taken to Response: 0.62 seconds
+
+//////// Total Time: 0.64 seconds
+
+///////// Record 17 ////////////
+Timestamp: 2026-03-03 19:21:24
+
+//////// Query:
+
+what projects andrejs was worrking on
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: {"_id": "andrejs", "career_highlights": ["Built a fully automated documentation and specification system for Geopost, reverse-engineering 3000+ internal engine variants using LLM agents, reducing development and maintenance costs by 40%.", "Developed and designed the LegalMate Legal Assistant system, which significantly accelerates
+the research process for legal professionals by 2-3 times.", "Created a diagnostic framework for Specialized AI Agents to steer them toward 'Golden behavior' and published a Reinforcement Learning paper on AI Safety in PLOS ONE."], "career_profile": "AI Engineer specializing in agentic LLM systems and AI evaluation, with 2+ years of applied GenAI/RL research and 5+ years of software engineering experience. Designed and deployed production-grade multi-agent systems, RAG pipelines, and diagnostic
+frameworks across legal, HR, and enterprise domains, with measurable cost and productivity impact.", "contact": {"location": "London, UK", "phone": "+44 7708 230365", "email": "andreyshorstkins@gmail.com", "linkedin": "LinkedIn.com/in/andrejs-sorstkins-076bb3177/", "github": "GitHub.com/AndreyShor/", "status": "Open to relocation"}, "core_expertise": ["Agentic AI Systems", "LLM Evaluation & Diagnostics", "RAG Architectures", "Multi-Agent Reasoning", "Applied AI Safety", "Production GenAI
+Systems"], "name": "Andrejs Sorstkins, M.Sc.", "professional_experience": [{"company": "LegalMate Law Limited. (Early-Stage Start-up)", "location": "London, UK", "industry": "Artificial intelligence systems.", "duration": "08/2025 - Present", "roles": [{"title": "Founding AI Engineer", "type": "Part-Time", "hours_per_week": "~10-15", "description": "Owned end-to-end design of agentic system architecture and evaluation pipelines, led 5 engineers.", "responsibilities": ["Designed and architected
+an agentic system with 3 flagship agents: OSCOLO Referencer, Legal Researcher, and Essay Suggester. Mentored engineers to build a correct concurrent system.", "Developed a stateful, multi-step agentic workflow that uses LangChain and LangGraph to execute tools, enabling iterative reasoning, validation loops, and task decomposition rather than single-pass prompting.", "Integrated RAG with Qdrant as the vector database, including custom PDF ingestion pipelines and intelligent text chunking for
+precise context retrieval from case files."]}]}, {"company": "Bellman Lab Ltd. (Geopost)", "location": "Riga, Latvia", "industry": "Artificial intelligence systems.", "duration": "11/2025 - 03/2026", "roles": [{"title": "Senior AI Engineer", "type": "Contract", "duration": "4 months", "description": "It was a contract position with Bellman Lab on behalf of Geopost. Responsible for AI Integration."}]}], "title": "AI Engineer \u2014 Agentic Systems & LLM Evaluation"}
+
+//////// System Response:
+
+Andrejs was working on several projects, including the Autonomous Legal Assistant system developed for LegalMate Law Limited, the diagnostic framework for Specialized AI Agents focused on Golden behavior, and a reinforcement learning paper exploring AI Safety in PLOS ONE.
+
+//////// Time for RAG generation: 0.03 seconds
+
+//////// Time Taken to Response: 2.13 seconds
+
+//////// Total Time: 2.16 seconds
+
+///////// Record 18 ////////////
+Timestamp: 2026-03-03 19:29:04
+
+//////// Query:
+
+how many years of experiance he has ?
+
+//////// Vector Addition
+
+//// Vector Addition 
+
+You are given user profile. Don't tell user anything about his profile at all. Just answer his question without any additional questions. User Profile Description: {"_id": "andrejs", "career_highlights": ["Built a fully automated documentation and specification system for Geopost, reverse-engineering 3000+ internal engine variants using LLM agents, reducing development and maintenance costs by 40%.", "Developed and designed the LegalMate Legal Assistant system, which significantly accelerates
+the research process for legal professionals by 2-3 times.", "Created a diagnostic framework for Specialized AI Agents to steer them toward 'Golden behavior' and published a Reinforcement Learning paper on AI Safety in PLOS ONE."], "career_profile": "AI Engineer specializing in agentic LLM systems and AI evaluation, with 2+ years of applied GenAI/RL research and 5+ years of software engineering experience. Designed and deployed production-grade multi-agent systems, RAG pipelines, and diagnostic
+frameworks across legal, HR, and enterprise domains, with measurable cost and productivity impact.", "contact": {"location": "Lancaster, England, United Kingdom", "phone": "+44 7708 230365", "email": "andrejs232@gmail.com", "linkedin": "www.linkedin.com/in/andrejs-sorstkins-076bb3177", "personal_website": "andreyshor.github.io/", "github": "github.com/AndreyShor", "status": "Open to relocation"}, "core_expertise": ["Agentic AI Systems", "LLM Evaluation & Diagnostics", "RAG Architectures",
+"Multi-Agent Reasoning", "Applied AI Safety", "Production GenAI Systems"], "name": "Andrejs Sorstkins, M.Sc.", "professional_experience": [{"company": "LegalMate", "title": "Founding AI Engineer", "duration": "July 2025 - Present (9 months)", "location": "London Area, United Kingdom", "description": "Designed and implemented the backend architecture for LegalMate, an AI-powered legal assistant for legal professionals and students. Built an async, high-performance backend using FastAPI with SSE
+for real-time streaming. Developed a stateful, multi-step agentic workflow using LangChain and LangGraph. Integrated RAG using Qdrant with custom PDF ingestion pipelines (pypdf, pdfminer). Designed hybrid document storage using Supabase and AWS S3."}, {"company": "Bellman Labs (Geopost)", "title": "Senior AI Engineer", "duration": "November 2025 - February 2026 (4 months)", "location": "Riga, Latvia", "description": "Led development and documentation of AI platform infrastructure. Designed and
+implemented end-to-end API documentation by reverse-engineering undocumented API endpoints. Built structured documentation for large-scale engine configurations powering Geopost internal systems (1,000+ variants). Implemented semantic search over internal technical documentation. Advanced internal tooling for MCP-based automated CSS generation from Figma."}, {"company": "JobFair", "title": "GenAI Engineer", "duration": "May 2025 - October 2025 (6 months)", "location": "Lancashire, England,
+United Kingdom", "description": "Contributed to agentic AI system focusing on evaluation, diagnostics, and failure analysis of multi-agent reasoning workflows. Authored and published a research paper on diagnostics of cognitive failures in multi-agent expert systems. Developed mechanisms for analyzing agent behavior under stochastic non-deterministic conditions."}, {"company": "University of Essex", "title": "Engineering Technician", "duration": "November 2022 - October 2024 (2 years)",
+"location": "Colchester, United Kingdom", "description": "Managed, designed, and developed various projects in the Robotics Department. Led design of RFID security solutions (C/C++, JavaScript, AES). Developed IoT solutions using ESPHome and Home Assistant. Created a staff management system (Node.js, PHP, MySQL). Applied Agile methodologies (Gitlab, Jira). Managed Oracle Cloud, Azure, Docker, and FOG imaging."}, {"company": "Greengish", "title": "Full-stack Developer", "duration": "May 2023 -
+December 2023 (8 months)", "description": "Developed an innovative robo-advisor platform designed to predict ETF prices and deliver tailored investment packages. Focused on frontend development, designing user-friendly interfaces and collaborating with the backend team for efficient integration."}, {"company": "Self Employed", "title": "Full Stack Developer", "duration": "June 2019 - May 2023 (4 years)", "location": "London, United Kingdom", "description": "Freelance developer delivering custom
+software solutions and web applications for SMBs across pharmaceuticals, transport, and dishware industries."}, {"company": "Arcona Ltd. Latvia", "title": "Frontend Developer", "duration": "December 2018 - September 2019 (10 months)", "location": "Latvia", "description": "Web Development Intern responsible for developing a promotional website for a new product launch. Coordinated with printing house industry to align digital and physical assets."}], "title": "AI Engineer \u2014 Agentic Systems &
+LLM Evaluation", "certifications": ["JavaScript: The Tricky Bits", "Advanced First Aid & CPR", "Flying ID A2 Unmanned Systems Aircraft", "Remote Pilot Certificate of Competence", "Internship Experience UK 2022 - Technology"], "education": [{"institution": "Lancaster University", "degree": "Master of Science - MS, Data Science and Artificial Intelligence", "duration": "October 2024 - October 2025"}, {"institution": "EITCA Academy", "degree": "EITCA Artificial Intelligence Program (EITCA/AI)",
+"duration": "March 2024 - March 2025"}, {"institution": "University of Essex", "degree": "Bachelor of Science - BS, (Hons) Computer Science", "duration": "October 2019 - July 2022"}, {"institution": "Earlscliffe", "degree": "A level program", "duration": "September 2017 - July 2019"}], "languages": ["English (Full Professional)", "Russian (Full Professional)", "Latvian (Limited Working)"], "publications": ["Assessing RAG and HyDE on 1B vs. 4B-Parameter Gemma LLMs for Personal Assistants
+Integration", "Diagnostics of cognitive failures in multi-agent expert systems using dynamic evaluation protocols and subsequent mutation of the processing context", "Learning to Undo: Rollback-Augmented Reinforcement Learning with Reversibility Signals"], "summary": "I am a Data Scientist with GenAI Engineering specialization in diagnostic, and evaluation of emergent behaviors in autonomous LLM agentic systems. I had previous experience as an Engineering Technician in the research department of
+a university and several years as a Full Stack Developer. I am fully familiar with SQL, Document Type, and Vector Databases for RAG augmentation on top of MLOps containerization and deployment practices. My main development languages at this moment are Python, JS/TS, and R.", "top_skills": ["Python", "JavaScript / TypeScript", "R", "Radis (Redis)", "Celery", "Qdrant", "FastAPI", "LangChain", "Docker", "AWS"]}
+
+//////// System Response:
+
+5+ years.
+
+//////// Time for RAG generation: 0.03 seconds
+
+//////// Time Taken to Response: 1.12 seconds
+
+//////// Total Time: 1.15 seconds
+

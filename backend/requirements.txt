@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+pymongo
+qdrant-client
+sentence-transformers
+langchain
+langchain_openai
+langchain_core
+langchain-qdrant
+langchain-community
+langchain_huggingface
+ddgs
+beautifulsoup4
+httpx

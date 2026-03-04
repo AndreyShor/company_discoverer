@@ -1,0 +1,9 @@
+@import './variables';
+@import './chat';
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: $bg-color;
+  margin: 0;
+  padding: 0;
+}
