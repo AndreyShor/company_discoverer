@@ -58,6 +58,7 @@ class TaskManager:
         """Partially update task state fields."""
         state = await self.get_task(task_id)
         if state is None:
+            logger.warning("task_update_not_found", task_id=task_id)
             return
         state.update(kwargs)
         redis = get_redis()

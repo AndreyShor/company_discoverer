@@ -1,5 +1,5 @@
 # Backend Project Blueprint
-This document specifies the architectural layout, core stack, and setup patterns of the LegalMate backend. Provide this blueprint to AI agents when bootstrapping a new backend service or transferring the architecture to another application.
+This document specifies the architectural layout, core stack, and setup patterns of the company_discoverer backend. Provide this blueprint to AI agents when bootstrapping a new backend service or transferring the architecture to another application.
 
 ## Core Technology Stack
 - **Framework**: FastAPI with Uvicorn ASGI server.
