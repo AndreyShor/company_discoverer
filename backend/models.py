@@ -44,9 +44,63 @@ class FinancialAnalysis(BaseModel):
         default_factory=list,
         description="Any other notable financial KPIs: MAU, GMV, burn rate, etc."
     )
+    is_large_company: bool = Field(
+        description="Whether the company is deemed 'large enough' for a deep financial investigation (e.g. public company, unicorn, or high revenue/headcount)."
+    )
     sources: List[str] = Field(
         default_factory=list,
         description="URLs or titles of sources used."
+    )
+
+
+class Investor(BaseModel):
+    """Profile of a single investor."""
+    name: str = Field(description="Name of the investor (firm or individual).")
+    type: Optional[str] = Field(default=None, description="Type: VC, PE, Angel, Corporate, etc.")
+    notable_portfolio: List[str] = Field(default_factory=list, description="Other notable companies this investor has backed.")
+    reason_for_investing: Optional[str] = Field(default=None, description="Stated or inferred rationale for investing in this company.")
+
+
+class RevenueYear(BaseModel):
+    """Revenue for a single year."""
+    year: str = Field(description="Fiscal year, e.g. '2023'.")
+    revenue: str = Field(description="Revenue figure and currency, e.g. '$5.1B'.")
+    growth: Optional[str] = Field(default=None, description="YoY growth percentage if available.")
+
+
+class FinancialDeepAnalysis(BaseModel):
+    """Deep financial intelligence produced by the Financial Deep-Dive agent node."""
+    revenue_over_time: List[RevenueYear] = Field(
+        default_factory=list,
+        description="Year-by-year revenue progression to show growth trajectory."
+    )
+    key_investors: List[Investor] = Field(
+        default_factory=list,
+        description="Profiles of the most significant investors with their rationale."
+    )
+    investment_thesis: Optional[str] = Field(
+        default=None,
+        description="Synthesis of the main reasons investors have backed this company — market opportunity, team, moat, timing, etc."
+    )
+    capital_deployment: List[str] = Field(
+        default_factory=list,
+        description="How raised capital has been spent: R&D, hiring, acquisitions, marketing, infrastructure, etc."
+    )
+    expense_strategy: Optional[str] = Field(
+        default=None,
+        description="Overall expense philosophy — cost discipline, heavy R&D investment, growth-at-all-costs, etc."
+    )
+    future_outlook: Optional[str] = Field(
+        default=None,
+        description="Analyst or management projections, growth opportunities, risks, and strategic bets for the next 2-5 years."
+    )
+    key_risks: List[str] = Field(
+        default_factory=list,
+        description="Main financial or strategic risks identified from public reporting."
+    )
+    sources: List[str] = Field(
+        default_factory=list,
+        description="URLs or titles of sources used in the deep-dive."
     )
 
 
@@ -121,6 +175,10 @@ class StructuredBusinessAnalysis(BaseModel):
     financial_analysis: Optional[FinancialAnalysis] = Field(
         default=None,
         description="Structured financial intelligence gathered by the Financial Analysis node."
+    )
+    financial_deep_analysis: Optional[FinancialDeepAnalysis] = Field(
+        default=None,
+        description="Deep financial intelligence: revenue trends, investor profiles, capital deployment, and future outlook."
     )
     market_positioning: Optional[MarketPositioning] = Field(
         default=None,

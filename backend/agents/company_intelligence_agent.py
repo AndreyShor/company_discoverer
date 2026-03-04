@@ -43,6 +43,7 @@ from agents.OpenAIConnector import OpenAIConnector
 from agents.tools import ddgs_search_tool, page_scrape_tool
 from models import (
     FinancialAnalysis,
+    FinancialDeepAnalysis,
     MarketPositioning,
     ProductAnalysis,
     StructuredBusinessAnalysis,
@@ -74,6 +75,30 @@ You are a Financial Analysis specialist.
 Your task: gather and summarise financial intelligence for the target company.
 Focus on: revenue, funding history, valuation, profitability indicators, and key financial KPIs.
 Use only information actually retrieved from sources. Do not guess numbers.
+
+CRITICAL: You must also determine if the company is "large enough" for a deep financial deep-dive. 
+Set `is_large_company` to true if the company is public, has very high revenue (e.g. >$100M), 
+is a well-known unicorn, or has a massive headcount. If it's a small startup or niche SMB, set it to false.
+"""
+
+# ─── Financial Deep-Dive ─────────────────────────────────────────────────────
+FINANCIAL_DEEP_SYSTEM = """\
+You are a Senior Investment Analyst conducting a deep-dive on a company's financial history.
+
+Your focus areas:
+1. REVENUE TRAJECTORY — year-by-year revenue, growth rates, inflection points
+2. INVESTOR PROFILES — who invested, what type (VC/PE/Angel/Corporate), why they invested,
+   what their thesis was, other companies they back
+3. INVESTMENT THESIS — synthesise the PRIMARY reasons this company attracted investment:
+   market size, team quality, technology moat, timing, revenue model, etc.
+4. CAPITAL DEPLOYMENT — how has the money actually been spent? R&D, headcount, acquisitions,
+   marketing, international expansion, infrastructure?
+5. EXPENSE STRATEGY — is the company cost-disciplined? Growth-at-all-costs? Profitable-focused?
+6. FUTURE OUTLOOK — analyst forecasts, management guidance, key growth bets, macro tailwinds/headwinds
+7. KEY RISKS — financial, regulatory, competitive, or execution risks
+
+Base ALL findings strictly on the retrieved sources. Do not fabricate data.
+If a specific piece of information is not available, say so explicitly.
 """
 
 # ─── Market Positioning ──────────────────────────────────────────────────────
@@ -121,9 +146,10 @@ class AgentState(TypedDict, total=False):
     rejection_reason: Optional[str]
 
     # Specialist sub-reports (populated in parallel, read by _report_node)
-    financial_analysis: Optional[FinancialAnalysis]
-    market_positioning: Optional[MarketPositioning]
-    product_analysis:   Optional[ProductAnalysis]
+    financial_analysis:      Optional[FinancialAnalysis]
+    financial_deep_analysis: Optional[FinancialDeepAnalysis]   # populated by financial_deep after financial
+    market_positioning:      Optional[MarketPositioning]
+    product_analysis:        Optional[ProductAnalysis]
 
     # Final output
     structured_report: Optional[StructuredBusinessAnalysis]
@@ -208,12 +234,13 @@ class CompanyIntelligenceAgent:
         workflow = StateGraph(AgentState)
 
         # Register nodes
-        workflow.add_node("router",     self._router_node)
-        workflow.add_node("dispatcher", self._dispatcher_node)  # pass-through fan-out
-        workflow.add_node("financial",  self._financial_node)
-        workflow.add_node("market",     self._market_node)
-        workflow.add_node("product",    self._product_node)
-        workflow.add_node("report",     self._report_node)
+        workflow.add_node("router",          self._router_node)
+        workflow.add_node("dispatcher",      self._dispatcher_node)
+        workflow.add_node("financial",       self._financial_node)
+        workflow.add_node("financial_deep",  self._financial_deep_node)  # ← NEW: deep-dive
+        workflow.add_node("market",          self._market_node)
+        workflow.add_node("product",         self._product_node)
+        workflow.add_node("report",          self._report_node)
 
         # Entry
         workflow.add_edge(START, "router")
@@ -228,16 +255,25 @@ class CompanyIntelligenceAgent:
             },
         )
 
-        # Dispatcher → parallel fan-out using direct edges.
-        # LangGraph runs all nodes reachable from the same super-step concurrently.
+        # Dispatcher → parallel fan-out (financial, market, product start simultaneously)
         workflow.add_edge("dispatcher", "financial")
         workflow.add_edge("dispatcher", "market")
         workflow.add_edge("dispatcher", "product")
 
-        # All three specialist nodes converge at report
-        workflow.add_edge("financial", "report")
-        workflow.add_edge("market",    "report")
-        workflow.add_edge("product",   "report")
+        # financial → conditional: proceed to financial_deep or skip to report
+        workflow.add_conditional_edges(
+            "financial",
+            self._route_financial_deep,
+            {
+                "deep": "financial_deep",
+                "skip": "report",
+            },
+        )
+
+        # All branches converge at report
+        workflow.add_edge("financial_deep", "report")
+        workflow.add_edge("market",         "report")
+        workflow.add_edge("product",        "report")
 
         # Report is terminal
         workflow.add_edge("report", END)
@@ -247,6 +283,13 @@ class CompanyIntelligenceAgent:
     # ------------------------------------------------------------------ #
     # Routing helper                                                       #
     # ------------------------------------------------------------------ #
+
+    @staticmethod
+    def _route_financial_deep(state: AgentState) -> Literal["deep", "skip"]:
+        fin = state.get("financial_analysis")
+        if fin and fin.is_large_company:
+            return "deep"
+        return "skip"
 
     @staticmethod
     def _route_after_validation(state: AgentState) -> Literal["proceed", "reject"]:
@@ -335,7 +378,54 @@ class CompanyIntelligenceAgent:
 
         return {
             "financial_analysis": result,
-            "messages": [AIMessage(content=f"[Financial node] Analysis complete for {company}.")],
+            "messages": [AIMessage(content=f"[Financial node] Analysis complete for {company}. Proceeding to deep-dive.")],
+        }
+
+    # ------------------------------------------------------------------ #
+    # Node: Financial Deep-Dive                                            #
+    # ------------------------------------------------------------------ #
+
+    async def _financial_deep_node(self, state: AgentState) -> Dict[str, Any]:
+        """
+        Deep financial analysis node — runs AFTER _financial_node.
+        Ingests the FinancialAnalysis produced by the previous node plus
+        targeted additional searches, then produces a FinancialDeepAnalysis.
+        """
+        company = state.get("company_name", "")
+        region  = state.get("company_region", "")
+        fin     = state.get("financial_analysis")
+
+        # Additional targeted searches for depth
+        queries = [
+            f"{company} revenue history year by year growth",
+            f"{company} investors venture capital why invested thesis",
+            f"{company} annual report expenses R&D headcount spending",
+            f"{company} investor letter shareholder report 2023 2024",
+            f"{company} future outlook analyst forecast 2025 growth risks",
+        ]
+
+        context = await _search_and_scrape(queries, max_results=4, max_pages=4)
+
+        # Include the already-extracted financial summary as priming context
+        prior_fin = fin.model_dump_json(indent=2) if fin else "(no prior financial data)"
+
+        messages = [
+            SystemMessage(content=FINANCIAL_DEEP_SYSTEM),
+            HumanMessage(content=(
+                f"Company: {company}\nRegion: {region}\n\n"
+                f"=== Prior Financial Summary ===\n{prior_fin}\n\n"
+                f"=== Additional Retrieved Context ===\n{context}\n\n"
+                "Produce the FinancialDeepAnalysis covering all seven areas above."
+            )),
+        ]
+
+        result: FinancialDeepAnalysis = await self._llm.ainvoke_structured(
+            messages, response_model=FinancialDeepAnalysis
+        )
+
+        return {
+            "financial_deep_analysis": result,
+            "messages": [AIMessage(content=f"[Financial Deep-Dive] Complete for {company}.")],
         }
 
     # ------------------------------------------------------------------ #
@@ -417,11 +507,12 @@ class CompanyIntelligenceAgent:
         Assembles the three specialist sub-reports into a single StructuredBusinessAnalysis.
         Also runs a quick search for recent news and key executives.
         """
-        company  = state.get("company_name", "")
-        region   = state.get("company_region", "")
-        fin      = state.get("financial_analysis")
-        market   = state.get("market_positioning")
-        product  = state.get("product_analysis")
+        company   = state.get("company_name", "")
+        region    = state.get("company_region", "")
+        fin       = state.get("financial_analysis")
+        fin_deep  = state.get("financial_deep_analysis")
+        market    = state.get("market_positioning")
+        product   = state.get("product_analysis")
 
         def _fmt(obj) -> str:
             if obj is None:
@@ -437,12 +528,13 @@ class CompanyIntelligenceAgent:
 
         synthesis_prompt = (
             f"Company: {company}\nRegion: {region}\n\n"
-            "=== Financial Analysis ===\n"    + _fmt(fin)    + "\n\n"
-            "=== Market Positioning ===\n"    + _fmt(market) + "\n\n"
-            "=== Product Intelligence ===\n"   + _fmt(product) + "\n\n"
+            "=== Financial Analysis ===\n"       + _fmt(fin)      + "\n\n"
+            "=== Financial Deep-Dive ===\n"       + _fmt(fin_deep) + "\n\n"
+            "=== Market Positioning ===\n"        + _fmt(market)   + "\n\n"
+            "=== Product Intelligence ===\n"      + _fmt(product)  + "\n\n"
             "=== Supplementary context (executives, news) ===\n" + news_ctx + "\n\n"
             "Produce the final StructuredBusinessAnalysis using all of the above. "
-            "Collect all source URLs from the three analyses into the top-level sources field."
+            "Collect all source URLs from all analyses into the top-level sources field."
         )
 
         messages = [
@@ -454,10 +546,11 @@ class CompanyIntelligenceAgent:
             messages, response_model=StructuredBusinessAnalysis
         )
 
-        # Embed the typed sub-reports directly (no need to re-parse them)
-        report.financial_analysis = fin
-        report.market_positioning  = market
-        report.product_analysis    = product
+        # Embed all typed sub-reports
+        report.financial_analysis      = fin
+        report.financial_deep_analysis = fin_deep
+        report.market_positioning      = market
+        report.product_analysis        = product
 
         return {"structured_report": report}
 

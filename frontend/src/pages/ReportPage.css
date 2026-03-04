@@ -337,3 +337,76 @@
     font-size: 0.9rem;
     margin: 0;
 }
+
+/* ── Revenue table ───────────────────────────────────── */
+.rp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.rp-table th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.rp-table td {
+    padding: 0.55rem 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    color: #e2e8f0;
+}
+
+.rp-table tr:last-child td {
+    border-bottom: none;
+}
+
+.rp-table tr:hover td {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* ── Investor cards ──────────────────────────────────── */
+.rp-investor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.rp-investor-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 0.9rem 1rem;
+}
+
+.rp-investor-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.4rem;
+}
+
+.rp-investor-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #e2e8f0;
+}
+
+.rp-investor-reason {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    margin: 0.3rem 0 0;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* ── Tag dim variant ─────────────────────────────────── */
+.rp-tag--dim {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+}

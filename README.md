@@ -38,24 +38,33 @@ POST /api/generate-report
   │ Router Node │  validates company / region input
   └──────┬──────┘
          │ (parallel fan-out)
-  ┌──────┴──────────────────────────────┐
-  │              │              │       │
-  ▼              ▼              ▼       │
-Financial     Market        Product    │
-  Node          Node          Node     │
-  │              │              │      │
-  └──────────────┴──────────────┘      │
-         │ (converge)                  │
-         ▼                             │
-   Report Node  ◄────────────────────-─┘
+  ┌──────┴───────────────────────────────────────┐
+  │              │                │              │
+  ▼              ▼                ▼              │
+Financial      Market           Product          │
+  Node           Node             Node           │
+  │              │                │              │
+  ▼              │                │              │
+Financial      │                │              │
+Deep Node      │                │              │
+  │              │                │              │
+  └──────────────┴────────────────┘              │
+         │ (converge)                            │
+         ▼                                       │
+   Report Node  ◄────────────────────────────────┘
          │
          ▼
   Qdrant (saved for history)
 ```
 
-- **Three parallel specialist nodes** (Financial, Market, Product) each independently search DuckDuckGo, scrape URLs, and produce a typed Pydantic sub-model
-- **Report node** assembles the three sub-models into a final `StructuredBusinessAnalysis`
-- Every generated report is **persisted to Qdrant** and appears in the sidebar for instant recall
+- **LangGraph multi-agent pipeline**:
+  - **Router**: Validates input before starting research.
+  - **Financial**: Extracts baseline financials (revenue, valuation).
+  - **Financial Deep-Dive**: Sequential node that uses financial data to drill into investor rationale, capital deployment, and future outlook.
+  - **Market Positioning**: Analyzes competition and geographic presence.
+  - **Product Intelligence**: Details core products and technology stack.
+- **Report node** assembles all sub-models into a final `StructuredBusinessAnalysis`.
+- Every generated report is **persisted to Qdrant** for instant recall in the sidebar.
 
 ---
 

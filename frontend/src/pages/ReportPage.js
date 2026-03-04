@@ -87,38 +87,143 @@ const OverviewPanel = ({ data }) => (
   </div>
 );
 
-const FinancialPanel = ({ fin }) => {
-  if (!fin) return <div className="rp-panel"><p className="rp-muted">Financial analysis not available.</p></div>;
+const FinancialPanel = ({ fin, deep }) => {
+  if (!fin && !deep) return <div className="rp-panel"><p className="rp-muted">Financial analysis not available.</p></div>;
   return (
     <div className="rp-panel">
-      <Section icon={DollarSign} title="Revenue & Valuation" color="green">
-        <KV label="Revenue"              value={fin.revenue} />
-        <KV label="Valuation"            value={fin.valuation} />
-        <KV label="Profitability"        value={fin.profitability} />
-        <KV label="Years to profitable" value={fin.years_to_profitability} />
-      </Section>
+      {/* ── Surface-level summary ── */}
+      {fin && (
+        <>
+          <Section icon={DollarSign} title="Revenue & Valuation" color="green">
+            <KV label="Revenue"              value={fin.revenue} />
+            <KV label="Valuation"            value={fin.valuation} />
+            <KV label="Profitability"        value={fin.profitability} />
+            <KV label="Years to profitable" value={fin.years_to_profitability} />
+          </Section>
 
-      <Section icon={BarChart2} title="Funding Rounds" color="teal">
-        <BulletList items={fin.funding_rounds} emptyMsg="No funding data found." />
-      </Section>
+          <Section icon={BarChart2} title="Funding Rounds" color="teal">
+            <BulletList items={fin.funding_rounds} emptyMsg="No funding data found." />
+          </Section>
 
-      <Section icon={Zap} title="Key Financial Metrics" color="yellow">
-        {fin.key_financial_metrics && fin.key_financial_metrics.length > 0 ? (
-          <div className="rp-tag-group">
-            {fin.key_financial_metrics.map((m, i) => <Tag key={i}>{m}</Tag>)}
-          </div>
-        ) : <p className="rp-muted">No additional metrics available.</p>}
-      </Section>
+          <Section icon={Zap} title="Key Financial Metrics" color="yellow">
+            {fin.key_financial_metrics && fin.key_financial_metrics.length > 0 ? (
+              <div className="rp-tag-group">
+                {fin.key_financial_metrics.map((m, i) => <Tag key={i}>{m}</Tag>)}
+              </div>
+            ) : <p className="rp-muted">No additional metrics available.</p>}
+          </Section>
+        </>
+      )}
 
-      {fin.sources && fin.sources.length > 0 && (
+      {/* ── Deep-dive sections ── */}
+      {deep && (
+        <>
+          {/* Revenue over time table */}
+          {deep.revenue_over_time && deep.revenue_over_time.length > 0 && (
+            <Section icon={TrendingUp} title="Revenue Over Time" color="green">
+              <table className="rp-table">
+                <thead>
+                  <tr><th>Year</th><th>Revenue</th><th>YoY Growth</th></tr>
+                </thead>
+                <tbody>
+                  {deep.revenue_over_time.map((r, i) => (
+                    <tr key={i}>
+                      <td>{r.year}</td>
+                      <td>{r.revenue}</td>
+                      <td>{r.growth || '—'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </Section>
+          )}
+
+          {/* Investor profiles */}
+          {deep.key_investors && deep.key_investors.length > 0 && (
+            <Section icon={Users} title="Key Investors" color="purple">
+              <div className="rp-investor-list">
+                {deep.key_investors.map((inv, i) => (
+                  <div key={i} className="rp-investor-card">
+                    <div className="rp-investor-header">
+                      <span className="rp-investor-name">{inv.name}</span>
+                      {inv.type && <span className="rp-tag">{inv.type}</span>}
+                    </div>
+                    {inv.reason_for_investing && (
+                      <p className="rp-investor-reason">"{inv.reason_for_investing}"</p>
+                    )}
+                    {inv.notable_portfolio && inv.notable_portfolio.length > 0 && (
+                      <div className="rp-tag-group" style={{marginTop:'0.5rem'}}>
+                        {inv.notable_portfolio.map((p, j) => (
+                          <span key={j} className="rp-tag rp-tag--dim">{p}</span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </Section>
+          )}
+
+          {/* Investment thesis */}
+          {deep.investment_thesis && (
+            <Section icon={Zap} title="Investment Thesis" color="blue">
+              <p style={{margin:0}}>{deep.investment_thesis}</p>
+            </Section>
+          )}
+
+          {/* Capital deployment */}
+          {deep.capital_deployment && deep.capital_deployment.length > 0 && (
+            <Section icon={BarChart2} title="How Capital Was Deployed" color="teal">
+              <BulletList items={deep.capital_deployment} />
+            </Section>
+          )}
+
+          {/* Expense strategy */}
+          {deep.expense_strategy && (
+            <Section icon={DollarSign} title="Expense Strategy" color="yellow">
+              <p style={{margin:0}}>{deep.expense_strategy}</p>
+            </Section>
+          )}
+
+          {/* Future outlook */}
+          {deep.future_outlook && (
+            <Section icon={Globe} title="Future Outlook" color="orange">
+              <p style={{margin:0}}>{deep.future_outlook}</p>
+            </Section>
+          )}
+
+          {/* Key risks */}
+          {deep.key_risks && deep.key_risks.length > 0 && (
+            <Section icon={Target} title="Key Risks" color="red">
+              <BulletList items={deep.key_risks} />
+            </Section>
+          )}
+
+          {/* Deep sources */}
+          {deep.sources && deep.sources.length > 0 && (
+            <Section icon={ExternalLink} title="Sources" color="gray">
+              <ul className="rp-source-list">
+                {[...(fin?.sources || []), ...deep.sources]
+                  .filter((s, i, a) => a.indexOf(s) === i)
+                  .map((s, i) => (
+                    <li key={i}><a href={s} target="_blank" rel="noopener noreferrer">
+                      {s.length > 70 ? s.slice(0, 70) + '…' : s}
+                    </a></li>
+                  ))}
+              </ul>
+            </Section>
+          )}
+        </>
+      )}
+
+      {/* Fallback sources if no deep */}
+      {!deep && fin?.sources && fin.sources.length > 0 && (
         <Section icon={ExternalLink} title="Financial Sources" color="gray">
           <ul className="rp-source-list">
             {fin.sources.map((s, i) => (
-              <li key={i}>
-                <a href={s} target="_blank" rel="noopener noreferrer">
-                  {s.length > 70 ? s.slice(0, 70) + '…' : s}
-                </a>
-              </li>
+              <li key={i}><a href={s} target="_blank" rel="noopener noreferrer">
+                {s.length > 70 ? s.slice(0, 70) + '…' : s}
+              </a></li>
             ))}
           </ul>
         </Section>
@@ -251,7 +356,7 @@ const ReportPage = ({ reportData }) => {
   const renderPanel = () => {
     switch (activeTab) {
       case 'overview':  return <OverviewPanel  data={reportData} />;
-      case 'financial': return <FinancialPanel fin={reportData.financial_analysis} />;
+      case 'financial': return <FinancialPanel fin={reportData.financial_analysis} deep={reportData.financial_deep_analysis} />;
       case 'market':    return <MarketPanel    market={reportData.market_positioning} />;
       case 'products':  return <ProductsPanel  product={reportData.product_analysis} />;
       case 'news':      return <NewsPanel      data={reportData} />;
