@@ -45,8 +45,8 @@ Financial      Market           Product          │
   Node           Node             Node           │
   │              │                │              │
   ▼              │                │              │
-Financial      │                │              │
-Deep Node      │                │              │
+Financial        │                │              │
+Deep Node        │                │              │
   │              │                │              │
   └──────────────┴────────────────┘              │
          │ (converge)                            │
